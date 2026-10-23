@@ -1,0 +1,131 @@
+Id,Name,Type,Icon,Price,Slot,Level
+Id,名称,类型,图标,价格,槽位,等级
+21001,BanditLightArmor [Paint],2,0001,20,Body,1
+21002,BaseballOutfit,2,0002,40,Body,1
+21003,BerserkArmor,2,0003,60,Body,1
+21004,BlacksmithCostume,2,0004,80,Body,1
+21005,ChainmailLightArmor [Paint],2,0005,100,Body,1
+21006,Deserter,2,0006,120,Body,1
+21007,DwellerArmor,2,0007,140,Body,1
+21008,FarmerClothes,2,0008,160,Body,1
+21009,FireAdept,2,0009,180,Body,1
+21010,GladiatorArmor,2,0010,200,Body,1
+21011,Hermit,2,0011,220,Body,1
+21012,Hunter,2,0012,240,Body,1
+21013,HunterLightArmor,2,0013,260,Body,1
+21014,HunterTunic,2,0014,280,Body,1
+21015,IronArmor [Paint],2,0015,300,Body,1
+21016,IronPlateArmor [Paint],2,0016,320,Body,1
+21017,LeatherJacket,2,0017,340,Body,1
+21018,LeatherRivetedArmor,2,0018,360,Body,1
+21019,MercenaryArmor [Paint],2,0019,380,Body,1
+21020,Militiaman,2,0020,400,Body,1
+21021,MinerCostume,2,0021,420,Body,1
+21022,NinjaOutfit,2,0022,440,Body,1
+21023,Nomad,2,0023,460,Body,1
+21024,NorthWarden,2,0024,480,Body,1
+21025,PathfinderArmor,2,0025,500,Body,1
+21026,PeasantClothing,2,0026,520,Body,1
+21027,Rags1,2,0027,540,Body,1
+21028,Rags2,2,0028,560,Body,1
+21029,Rags3,2,0029,580,Body,1
+21030,RangerArmor,2,0030,600,Body,1
+21031,Robe,2,0031,620,Body,1
+21032,RoyalArcherArmor,2,0032,640,Body,1
+21033,SandWarrior,2,0033,660,Body,1
+21034,SandWarrior1,2,0034,680,Body,1
+21035,Scout [Paint],2,0035,700,Body,1
+21036,SiegeArcherArmor,2,0036,720,Body,1
+21037,Slave,2,0037,740,Body,1
+21038,SniperArmor,2,0038,760,Body,1
+21039,SpearmanArmor,2,0039,780,Body,1
+21040,VikingFurArmor,2,0040,800,Body,1
+21041,VikingLightArmor1,2,0041,820,Body,1
+21042,VikingRoughArmor1,2,0042,840,Body,1
+21043,WaterAdept,2,0043,860,Body,1
+22001,ArielDress [Paint],2,0001,60,Body,2
+22002,BanditArmor,2,0002,80,Body,2
+22003,HalberdierArmor [Paint],2,0003,100,Body,2
+22004,InquisitorArmor,2,0004,120,Body,2
+22005,KnightArmor [Paint],2,0005,140,Body,2
+22006,LeatherLightArmor,2,0006,160,Body,2
+22007,PyromancerArmor,2,0007,180,Body,2
+22008,SandMage1,2,0008,200,Body,2
+22009,Santa1,2,0009,220,Body,2
+22010,Santa2,2,0010,240,Body,2
+22011,SantaHelper,2,0011,260,Body,2
+22012,VikingLightArmor2,2,0012,280,Body,2
+22013,VikingLightArmor3,2,0013,300,Body,2
+22014,Wanderer,2,0014,320,Body,2
+22015,WaterWizardArmor,2,0015,340,Body,2
+22016,WitchArmor,2,0016,360,Body,2
+23001,AssassinArmor [Paint],2,0001,180,Body,3
+23002,ChampionArmor,2,0002,200,Body,3
+23003,Cleric [Paint],2,0003,220,Body,3
+23004,CrusaderChainmail [Paint],2,0004,240,Body,3
+23005,DestroyerArmor [Paint],2,0005,260,Body,3
+23006,EliteGuardArmor [Paint],2,0006,280,Body,3
+23007,FalconLightArmor,2,0007,300,Body,3
+23008,FireKnightArmor [Paint],2,0008,320,Body,3
+23009,GguardsmenArmor [Paint],2,0009,340,Body,3
+23010,GreyKnight,2,0010,360,Body,3
+23011,GuardArmor [Paint],2,0011,380,Body,3
+23012,KnightArmor,2,0012,400,Body,3
+23013,ShamanArmor,2,0013,420,Body,3
+23014,VikingRoughArmor2,2,0014,440,Body,3
+23015,WarlockArmor,2,0015,460,Body,3
+23016,WitchHunterArmor [Paint],2,0016,480,Body,3
+24001,HeavyArmor [Paint],2,0001,540,Body,4
+24002,ManticoreArmor,2,0002,560,Body,4
+24003,MarauderArmor [Paint],2,0003,580,Body,4
+24004,Ninja1 [Paint],2,0004,600,Body,4
+24005,Ninja2 [Paint],2,0005,620,Body,4
+24006,Ninja3,2,0006,640,Body,4
+24007,PaladinArmor [Paint],2,0007,660,Body,4
+24008,SamuraiElder,2,0008,680,Body,4
+24009,SamuraiHeavy1,2,0009,700,Body,4
+24010,SamuraiHeavy2,2,0010,720,Body,4
+24011,SamuraiHeavy3,2,0011,740,Body,4
+24012,SamuraiLight1,2,0012,760,Body,4
+24013,SamuraiLight2,2,0013,780,Body,4
+24014,SamuraiLight3,2,0014,800,Body,4
+24015,ThiefArmor,2,0015,820,Body,4
+24016,VikingRoughArmor3 [Paint],2,0016,840,Body,4
+25001,CardinalArmor,2,0001,1620,Body,5
+25002,CataphractArmor [Paint],2,0002,1640,Body,5
+25003,DarkKnight,2,0003,1660,Body,5
+25004,DruidArmor,2,0004,1680,Body,5
+25005,IceWizardArmor,2,0005,1700,Body,5
+25006,SandElder,2,0006,1720,Body,5
+25007,SandHealer1,2,0007,1740,Body,5
+25008,SandHealer2,2,0008,1760,Body,5
+25009,SandMage2,2,0009,1780,Body,5
+25010,SandShooter1,2,0010,1800,Body,5
+25011,SandShooter2,2,0011,1820,Body,5
+25012,SandWarrior2,2,0012,1840,Body,5
+26001,BishopArmor,2,0001,4860,Body,6
+26002,FireWarriorArmor,2,0002,4880,Body,6
+26003,NecromancerArmor,2,0003,4900,Body,6
+26004,StormBringerArmor,2,0004,4920,Body,6
+26005,SwampElder,2,0005,4940,Body,6
+26006,SwampHealer1,2,0006,4960,Body,6
+26007,SwampHealer2,2,0007,4980,Body,6
+26008,SwampMage1,2,0008,5000,Body,6
+26009,SwampShooter1,2,0009,5020,Body,6
+26010,SwampShooter2,2,0010,5040,Body,6
+26011,SwampWarrior1,2,0011,5060,Body,6
+27001,DarkMountain,2,0001,14580,Body,7
+27002,FireWizardArmor,2,0002,14600,Body,7
+27003,FreeFolk [Paint],2,0003,14620,Body,7
+27004,GoldLion,2,0004,14640,Body,7
+27005,HorseLord,2,0005,14660,Body,7
+27006,IronIslands,2,0006,14680,Body,7
+27007,LandsknechtArmor,2,0007,14700,Body,7
+27008,LittleLion,2,0008,14720,Body,7
+27009,Mountain [Paint],2,0009,14740,Body,7
+27010,NightsWatch [Paint],2,0010,14760,Body,7
+27011,RedLion,2,0011,14780,Body,7
+27012,RoyalGuard,2,0012,14800,Body,7
+27013,SpikedArmor,2,0013,14820,Body,7
+27014,SwampMage2,2,0014,14840,Body,7
+27015,SwampWarrior2,2,0015,14860,Body,7

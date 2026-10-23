@@ -1,0 +1,143 @@
+Id,Name,Type,Icon,Price,Slot,Level
+Id,名称,类型,图标,价格,槽位,等级
+31001,FamilySword,3,0001,15,Mainhand,1
+31002,FireAdeptWand1,3,0002,30,Mainhand,1
+31003,FireAdeptWand2,3,0003,45,Mainhand,1
+31004,GuardSword2 [Paint],3,0004,60,Mainhand,1
+31005,HardwoodWand,3,0005,75,Mainhand,1
+31006,HunterKnife [Paint],3,0006,90,Mainhand,1
+31007,IronHammer,3,0007,105,Mainhand,1
+31008,Machete [Paint],3,0008,120,Mainhand,1
+31009,MagicWandTypeA,3,0009,135,Mainhand,1
+31010,MagicWandTypeB,3,0010,150,Mainhand,1
+31011,MalformedStaff,3,0011,165,Mainhand,1
+31012,MilitiamanShortSword [Paint],3,0012,180,Mainhand,1
+31013,RustedHammer,3,0013,195,Mainhand,1
+31014,RustedPickaxe,3,0014,210,Mainhand,1
+31015,RustySword,3,0015,225,Mainhand,1
+31016,ShamanWand,3,0016,240,Mainhand,1
+31017,ShortDagger [Paint],3,0017,255,Mainhand,1
+31018,SlaveSword [Paint],3,0018,270,Mainhand,1
+31019,SmallAxe,3,0019,285,Mainhand,1
+31020,Smallsword,3,0020,300,Mainhand,1
+31021,StoneAxe,3,0021,315,Mainhand,1
+31022,SwampWarriorSpear,3,0022,330,Mainhand,1
+31023,TrainingSword [Paint],3,0023,345,Mainhand,1
+31024,VikingSword1,3,0024,360,Mainhand,1
+31025,WarlockWand,3,0025,375,Mainhand,1
+31026,WaterAdeptWand2,3,0026,390,Mainhand,1
+31027,WoodcutterAxe,3,0027,405,Mainhand,1
+31028,WoodenClub,3,0028,420,Mainhand,1
+31029,WoodenMace,3,0029,435,Mainhand,1
+31030,__temp_1_0__AspenStake,3,0030,450,Mainhand,1
+31031,__temp_1_10__DwellerWand,3,0031,465,Mainhand,1
+31032,__temp_1_1__AssassinDagger [Paint],3,0032,480,Mainhand,1
+31033,__temp_1_2__Bilbo,3,0033,495,Mainhand,1
+31034,__temp_1_3__BlacksmithHammer,3,0034,510,Mainhand,1
+31035,__temp_1_4__BoneClub,3,0035,525,Mainhand,1
+31036,__temp_1_5__BronzeDagger,3,0036,540,Mainhand,1
+31037,__temp_1_6__BronzePickaxe,3,0037,555,Mainhand,1
+31038,__temp_1_7__CursedBone,3,0038,570,Mainhand,1
+31039,__temp_1_8__DeserterDagger [Paint],3,0039,585,Mainhand,1
+31040,__temp_1_9__DruidWand,3,0040,600,Mainhand,1
+32001,BalancedSword [Paint],3,0001,45,Mainhand,2
+32002,ClericWand1,3,0002,60,Mainhand,2
+32003,CopperPickaxe,3,0003,75,Mainhand,2
+32004,GuardSword1 [Paint],3,0004,90,Mainhand,2
+32005,HermitWand,3,0005,105,Mainhand,2
+32006,HorseLordSickle,3,0006,120,Mainhand,2
+32007,Katana1 [Paint],3,0007,135,Mainhand,2
+32008,KnightSword [Paint],3,0008,150,Mainhand,2
+32009,Kunai,3,0009,165,Mainhand,2
+32010,LittleLionSword [Paint],3,0010,180,Mainhand,2
+32011,MagicSword [Paint],3,0011,195,Mainhand,2
+32012,ManticoreSword,3,0012,210,Mainhand,2
+32013,Morgenstern,3,0013,225,Mainhand,2
+32014,OldPoleaxe,3,0014,240,Mainhand,2
+32015,SandMageStaff1,3,0015,255,Mainhand,2
+32016,SantaHelperWand,3,0016,270,Mainhand,2
+32017,ShortSword [Paint],3,0017,285,Mainhand,2
+32018,SteelPickaxe,3,0018,300,Mainhand,2
+32019,SwampMage1Staff,3,0019,315,Mainhand,2
+32020,VikingAxe1,3,0020,330,Mainhand,2
+32021,VikingSword2 [Paint],3,0021,345,Mainhand,2
+32022,WaterAdeptWand1,3,0022,360,Mainhand,2
+32023,WaterWizardWand,3,0023,375,Mainhand,2
+32024,WoodenSpikedClub,3,0024,390,Mainhand,2
+33001,BishopWand,3,0001,135,Mainhand,3
+33002,BroadSword,3,0002,150,Mainhand,3
+33003,DestroyerAxe,3,0003,165,Mainhand,3
+33004,DrownedGoblinHand,3,0004,180,Mainhand,3
+33005,EliteGuardSword [Paint],3,0005,195,Mainhand,3
+33006,EliteKnightSword [Paint],3,0006,210,Mainhand,3
+33007,FreeFolkAxe,3,0007,225,Mainhand,3
+33008,IceWizardWand,3,0008,240,Mainhand,3
+33009,InquisitorSword1 [Paint],3,0009,255,Mainhand,3
+33010,IronPickaxe,3,0010,270,Mainhand,3
+33011,Katana2 [Paint],3,0011,285,Mainhand,3
+33012,MagicWandTypeC,3,0012,300,Mainhand,3
+33013,PyromancerWand,3,0013,315,Mainhand,3
+33014,Sai [Paint],3,0014,330,Mainhand,3
+33015,SandHealerStaff2,3,0015,345,Mainhand,3
+33016,SantaWand,3,0016,360,Mainhand,3
+33017,ShortKnightSword [Paint],3,0017,375,Mainhand,3
+33018,Stoccata,3,0018,390,Mainhand,3
+33019,StormBringerWand,3,0019,405,Mainhand,3
+33020,VikingAxe2,3,0020,420,Mainhand,3
+33021,VikingAxe3,3,0021,435,Mainhand,3
+33022,VikingSword3 [Paint],3,0022,450,Mainhand,3
+33023,WarHammer,3,0023,465,Mainhand,3
+33024,WitchWand,3,0024,480,Mainhand,3
+33025,WolfSword [Paint],3,0025,495,Mainhand,3
+33026,WoodcutterPoleaxe,3,0026,510,Mainhand,3
+34001,BrassPickaxe,3,0001,405,Mainhand,4
+34002,CardinalWand,3,0002,420,Mainhand,4
+34003,DarkStoneHammer,3,0003,435,Mainhand,4
+34004,InquisitorSword2 [Paint],3,0004,450,Mainhand,4
+34005,Katana3 [Paint],3,0005,465,Mainhand,4
+34006,Morgana,3,0006,480,Mainhand,4
+34007,Ninjato [Paint],3,0007,495,Mainhand,4
+34008,NorthWardenSword [Paint],3,0008,510,Mainhand,4
+34009,SamuraiSword2,3,0009,525,Mainhand,4
+34010,SandHealerStaff1,3,0010,540,Mainhand,4
+34011,SandWarriorSword1,3,0011,555,Mainhand,4
+34012,Scythe,3,0012,570,Mainhand,4
+34013,ShortIronKatana [Paint],3,0013,585,Mainhand,4
+34014,SteelAxe,3,0014,600,Mainhand,4
+34015,SwampHealer1Staff,3,0015,615,Mainhand,4
+34016,WarClub,3,0016,630,Mainhand,4
+34017,Zweihander [Paint],3,0017,645,Mainhand,4
+35001,BerserkAxe,3,0001,1215,Mainhand,5
+35002,ClericWand2,3,0002,1230,Mainhand,5
+35003,DreadCleaver,3,0003,1245,Mainhand,5
+35004,FireKnightSword [Paint],3,0004,1260,Mainhand,5
+35005,FireWizardWand,3,0005,1275,Mainhand,5
+35006,GateCrusher,3,0006,1290,Mainhand,5
+35007,Halberd,3,0007,1305,Mainhand,5
+35008,InquisitorSword3 [Paint],3,0008,1320,Mainhand,5
+35009,IronIslandsSword [Paint],3,0009,1335,Mainhand,5
+35010,LongHammer,3,0010,1350,Mainhand,5
+35011,RunicAxe,3,0011,1365,Mainhand,5
+35012,SamuraiSword1,3,0012,1380,Mainhand,5
+35013,SandElderStaff,3,0013,1395,Mainhand,5
+35014,SandWarriorSword2,3,0014,1410,Mainhand,5
+36001,BlackHammer,3,0001,3645,Mainhand,6
+36002,DarkSword,3,0002,3660,Mainhand,6
+36003,FireWarriorSword2,3,0003,3675,Mainhand,6
+36004,InquisitorSword4 [Paint],3,0004,3690,Mainhand,6
+36005,LionSword [Paint],3,0005,3705,Mainhand,6
+36006,PaladinSword [Paint],3,0006,3720,Mainhand,6
+36007,SamuraiSword3,3,0007,3735,Mainhand,6
+36008,SandMageStaff2,3,0008,3750,Mainhand,6
+36009,SunriseSword,3,0009,3765,Mainhand,6
+36010,SwampHealer2Staff,3,0010,3780,Mainhand,6
+36011,TitanHammer,3,0011,3795,Mainhand,6
+36012,TwoHandedVikingAxe2,3,0012,3810,Mainhand,6
+37001,ElderStaff,3,0001,10935,Mainhand,7
+37002,FireWarriorSword1,3,0002,10950,Mainhand,7
+37003,HeavySword [Paint],3,0003,10965,Mainhand,7
+37004,SamuraiElderSword,3,0004,10980,Mainhand,7
+37005,SamuraiSword3 [Paint],3,0005,10995,Mainhand,7
+37006,SwampMage2Staff,3,0006,11010,Mainhand,7
+37007,TwoHandedVikingAxe3,3,0007,11025,Mainhand,7
+37008,TwoHandedVikingSword3 [Paint],3,0008,11040,Mainhand,7

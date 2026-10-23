@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 3453322449
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9adf0ceeacbdf17559d2b971b4bbdea7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9adf0ceeacbdf17559d2b971b4bbdea7
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Configs/Armor.txt
+- Assets/Configs/role.txt
+- Assets/Configs/skill.txt
+- Assets/Configs/traits.txt
+- Assets/Configs/Helmet.txt
+- Assets/Configs/Questobjective.txt
+- Assets/Configs/Shield.txt
+- Assets/Configs/Boots.txt
+- Assets/Configs/Supplies.txt
+- Assets/Configs/trait_attributes.txt
+- Assets/Configs/option.txt
+- Assets/Configs/Weapon.txt
+- Assets/Configs/enemy.txt
+- Assets/Configs/Quest.txt
+- Assets/Configs/player.txt
+- Assets/Configs/level.txt
+Dependencies: []

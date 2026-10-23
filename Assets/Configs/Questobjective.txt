@@ -1,0 +1,5 @@
+Id,Type,TargetPool,CountMin,CountMax
+模板ID,目标类型,目标ID池,最少数量,最多数量
+1,Kill,20001|20002,3,8
+2,CollectAny,0,3,6
+3,Kill,20003,1,1

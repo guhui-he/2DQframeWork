@@ -1,0 +1,5 @@
+Id,Name,Icon,Model,Info,HpMin,HpMax,AtkMin,AtkMax,DefMin,DefMax,StepMin,StepMax,CritMin,CritMax,AvdMin,AvdMax
+Id,名称,图标,模型,描述,血量小,血量大,攻击小,攻击大,防御小,防御大,行动小,行动大,暴击小,暴击大,闪避小,闪避大
+20001,恶魔骑士,enemy01,emo,堕落的恶魔骑士,50,55,45,75,5,10,3,6,10,15,10,15
+20002,哥布林,enemy02,gbl,绿皮小怪,45,70,10,15,5,10,3,6,10,15,10,15
+20003,雪怪,enemy03,IceMonster,冰原巨兽,100,150,10,15,10,15,3,6,10,15,10,15

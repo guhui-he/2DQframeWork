@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 1279112837
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bf5053dc1802b7f369ee3c95f9ba5011
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 90216d05ae6952cc9fdcf9784c6c3e56
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: bf5053dc1802b7f369ee3c95f9ba5011
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: b145b340396ebee47b4c1786630f8dcb, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/GameStart.unity
+Dependencies: []

@@ -1,0 +1,34 @@
+Id,Name,Type,Icon,Price,Slot,Level
+Id,名称,类型,图标,价格,槽位,等级
+61001,Apple,6,0001,20,Pocket,1
+61002,Bottle2,6,0002,40,Pocket,1
+61003,BronzeRing,6,0003,60,Pocket,1
+61004,Cheese,6,0004,80,Pocket,1
+61005,ChickenLeg,6,0005,100,Pocket,1
+61006,Grog,6,0006,120,Pocket,1
+61007,Ham,6,0007,140,Pocket,1
+61008,Hamburger,6,0008,160,Pocket,1
+61009,HandBomb,6,0009,180,Pocket,1
+61010,SmallPotion [Paint],6,0010,200,Pocket,1
+61011,SmallPotion,6,0011,220,Pocket,1
+63001,Boomerang [Paint],6,0001,180,Pocket,3
+63002,Bottle1,6,0002,200,Pocket,3
+63003,Brainz,6,0003,220,Pocket,3
+63004,DecoratedSilverRing,6,0004,240,Pocket,3
+63005,MagicBomb,6,0005,260,Pocket,3
+63006,Potion2,6,0006,280,Pocket,3
+63007,Potion3 [Paint],6,0007,300,Pocket,3
+63008,Potion3,6,0008,320,Pocket,3
+63009,SilverRing,6,0009,340,Pocket,3
+64001,Axeorang,6,0001,540,Pocket,4
+64002,Potion1 [Paint],6,0002,560,Pocket,4
+64003,RoyalGoldenRing,6,0003,580,Pocket,4
+64004,SavageBoomerang,6,0004,600,Pocket,4
+64005,SpikeBomb,6,0005,620,Pocket,4
+67001,ElegantGoldenRing,6,0001,14580,Pocket,7
+67002,FireballScroll,6,0002,14600,Pocket,7
+67003,Flute,6,0003,14620,Pocket,7
+67004,Lamp,6,0004,14640,Pocket,7
+67005,RareSilverRing,6,0005,14660,Pocket,7
+67006,ThrowingStar2,6,0006,14680,Pocket,7
+67007,TribalBoomerang,6,0007,14700,Pocket,7

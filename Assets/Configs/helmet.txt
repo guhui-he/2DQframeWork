@@ -1,0 +1,115 @@
+Id,Name,Type,Icon,Price,Slot,Level
+Id,名称,类型,图标,价格,槽位,等级
+11001,AgileHat,1,0001,10,Head,1
+11002,ArcherHat,1,0002,20,Head,1
+11003,AssassinHood [Paint],1,0003,30,Head,1
+11004,BishopHat [FullHair],1,0004,40,Head,1
+11005,BlacksmithHeadband,1,0005,50,Head,1
+11006,ClericHood [Paint],1,0006,60,Head,1
+11007,ClothHeadband,1,0007,70,Head,1
+11008,DeserterBandage [FullHair],1,0008,80,Head,1
+11009,HawkHelm,1,0009,90,Head,1
+11010,HermitHat,1,0010,100,Head,1
+11011,HermitHood [Paint],1,0011,110,Head,1
+11012,HunterHelm [Paint],1,0012,120,Head,1
+11013,IceWizardHood,1,0013,130,Head,1
+11014,InquisitorHat1 [Paint],1,0014,140,Head,1
+11015,LeatherHelm,1,0015,150,Head,1
+11016,MarauderHood,1,0016,160,Head,1
+11017,MilitiamanHelmet2 [Paint],1,0017,170,Head,1
+11018,MinerHelmet,1,0018,180,Head,1
+11019,NecromancerHood,1,0019,190,Head,1
+11020,PathfinderHood,1,0020,200,Head,1
+11021,PeasantCap,1,0021,210,Head,1
+11022,RangerHat [Paint],1,0022,220,Head,1
+11023,ScoutHelm,1,0023,230,Head,1
+11024,SlaveHeadband [FullHair],1,0024,240,Head,1
+11025,SnperHood,1,0025,250,Head,1
+11026,SteelHelm [Paint],1,0026,260,Head,1
+11027,SteelPotHelm,1,0027,270,Head,1
+11028,StrawHat,1,0028,280,Head,1
+11029,ThiefHelm [Paint],1,0029,290,Head,1
+11030,WarlockHood,1,0030,300,Head,1
+11031,WaterWizardHelm,1,0031,310,Head,1
+12001,AmateurDodgeHat,1,0001,30,Head,2
+12002,BowmanHat [Paint],1,0002,40,Head,2
+12003,EnforcedHelm [Paint],1,0003,50,Head,2
+12004,FireAdeptHood,1,0004,60,Head,2
+12005,FireWizardHood,1,0005,70,Head,2
+12006,GuardHelm3 [Paint],1,0006,80,Head,2
+12007,HalberdierHelm [Paint],1,0007,90,Head,2
+12008,HunterHat,1,0008,100,Head,2
+12009,HunterHat1,1,0009,110,Head,2
+12010,LeatherCap,1,0010,120,Head,2
+12011,MilitiamanHelmet1 [Paint],1,0011,130,Head,2
+12012,PathfinderHat [Paint],1,0012,140,Head,2
+12013,RoyalArcherHat,1,0013,150,Head,2
+12014,SandHealerHood,1,0014,160,Head,2
+12015,SandWarriorHelm1,1,0015,170,Head,2
+12016,SantaHat,1,0016,180,Head,2
+12017,SantaHelperHat2,1,0017,190,Head,2
+12018,SiegeArcherHelm [Paint],1,0018,200,Head,2
+12019,SpearmanHelm1,1,0019,210,Head,2
+12020,SpearmanHelm2,1,0020,220,Head,2
+12021,VikingIronHelm1,1,0021,230,Head,2
+12022,VikingLeatherHelm,1,0022,240,Head,2
+13001,AmateurDipperHat,1,0001,90,Head,3
+13002,BaboonMask,1,0002,100,Head,3
+13003,CardinalHat [Paint],1,0003,110,Head,3
+13004,CrusaderHelm [Paint],1,0004,120,Head,3
+13005,DruidHat [Paint],1,0005,130,Head,3
+13006,EliteKnightHelm,1,0006,140,Head,3
+13007,FalconIronHelm,1,0007,150,Head,3
+13008,GuardHelm [Paint],1,0008,160,Head,3
+13009,GuardHelm2 [Paint],1,0009,170,Head,3
+13010,GypsyHat,1,0010,180,Head,3
+13011,HalfmoonHat,1,0011,190,Head,3
+13012,HunterHat2,1,0012,200,Head,3
+13013,SantaHelperHat3,1,0013,210,Head,3
+13014,SharpHelm [Paint],1,0014,220,Head,3
+13015,VikingIronHelm2,1,0015,230,Head,3
+13016,WarriorHelm [Paint],1,0016,240,Head,3
+14001,AdvancedDipperHat,1,0001,270,Head,4
+14002,BerserkHelm,1,0002,280,Head,4
+14003,DwellerHood [Paint],1,0003,290,Head,4
+14004,GuardHelm1 [Paint],1,0004,300,Head,4
+14005,InquisitorHat2 [Paint],1,0005,310,Head,4
+14006,KnightHelm [Paint],1,0006,320,Head,4
+14007,MasterDodgeHat,1,0007,330,Head,4
+14008,NinjaHelm1 [Paint],1,0008,340,Head,4
+14009,NinjaHelm2 [Paint],1,0009,350,Head,4
+14010,NinjaHelm3 [Paint],1,0010,360,Head,4
+14011,PaladinHelm [Paint],1,0011,370,Head,4
+14012,SamuraiHelm1,1,0012,380,Head,4
+14013,SamuraiHelm2,1,0013,390,Head,4
+14014,SantaHelperHat1,1,0014,400,Head,4
+14015,VikingIronHelm3,1,0015,410,Head,4
+14016,WitchHat [Paint],1,0016,420,Head,4
+14017,WitchHunterHat [Paint],1,0017,430,Head,4
+15001,ChampionHelm,1,0001,810,Head,5
+15002,ExpertBowmanHat,1,0002,820,Head,5
+15003,MercenaryHelm1 [Paint],1,0003,830,Head,5
+15004,SamuraiElderHelm,1,0004,840,Head,5
+15005,SamuraiHelm3,1,0005,850,Head,5
+15006,SandElderTurban,1,0006,860,Head,5
+15007,SandShooterTurban,1,0007,870,Head,5
+15008,SandWarriorHelm2,1,0008,880,Head,5
+15009,ShamanHelm,1,0009,890,Head,5
+15010,ShamanMask2 [FullHair],1,0010,900,Head,5
+16001,CataphractHelm [Paint],1,0001,2430,Head,6
+16002,DestroyerHelm [Paint],1,0002,2440,Head,6
+16003,ExpertHunterHat,1,0003,2450,Head,6
+16004,GladiatorHelm2,1,0004,2460,Head,6
+16005,LandsknechtHelm [Paint],1,0005,2470,Head,6
+16006,ManticoreHelmet,1,0006,2480,Head,6
+16007,ShamanMask3 [FullHair],1,0007,2490,Head,6
+16008,SwampLordMask1 [FullHair],1,0008,2500,Head,6
+16009,SwampLordMask2  [FullHair],1,0009,2510,Head,6
+17001,DarkMountainHelm [Paint],1,0001,7290,Head,7
+17002,GladiatorHelm1,1,0002,7300,Head,7
+17003,HeavyHelm [Paint],1,0003,7310,Head,7
+17004,JesterHat,1,0004,7320,Head,7
+17005,MercenaryHelm2 [Paint],1,0005,7330,Head,7
+17006,MountainHelm [Paint],1,0006,7340,Head,7
+17007,ShamanMask [FullHair],1,0007,7350,Head,7
+17008,VisorKnightHelm [Paint],1,0008,7360,Head,7

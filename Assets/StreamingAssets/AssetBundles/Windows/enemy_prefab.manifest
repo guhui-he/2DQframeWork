@@ -1,0 +1,44 @@
+ManifestFileVersion: 0
+CRC: 1741419436
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ffc076918f74447cf2a2eddf1efe5440
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 30f25947d086c1182415dd1016605f65
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ffc076918f74447cf2a2eddf1efe5440
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 411e729afed24c62a04e2b99d9122e78, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 17fbb5b1c64ab2a47aa1689298325e64, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: QFramework.CoreKit
+  ClassName: QFramework.OtherBind
+Assets:
+- Assets/Art/Prefabs/Enemy.prefab
+Dependencies: []

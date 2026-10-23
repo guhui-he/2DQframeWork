@@ -1,0 +1,5 @@
+Id,NameTemplate,DescTemplate,Type,MoneyMin,MoneyMax,ItemRewardCount
+Id,任务名模板,描述模板,类型,最少奖励,最多奖励,奖励装备数量
+1,清理{enemy},"击败{count}个{enemy}",1001,200,800,0
+2,收集物资,收集{count}件任意装备,1002,150,500,1
+3,猎杀精英,击败1只{enemy},1003,800,1500,2

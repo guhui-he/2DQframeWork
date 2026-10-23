@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 1910439778
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: gamestartpanel_prefab
+      Dependencies: {}
+    Info_1:
+      Name: loadingpanel_prefab
+      Dependencies: {}
+    Info_2:
+      Name: freeknight
+      Dependencies: {}
+    Info_3:
+      Name: gamepanel_prefab
+      Dependencies: {}
+    Info_4:
+      Name: game_unity
+      Dependencies:
+        Dependency_0: freeknight
+    Info_5:
+      Name: gamestart_unity
+      Dependencies: {}
+    Info_6:
+      Name: enemy_prefab
+      Dependencies: {}
+    Info_7:
+      Name: buildenterpanel_prefab
+      Dependencies: {}
+    Info_8:
+      Name: townpanel_prefab
+      Dependencies: {}
+    Info_9:
+      Name: configs
+      Dependencies: {}

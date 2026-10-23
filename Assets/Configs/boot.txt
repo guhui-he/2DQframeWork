@@ -1,0 +1,131 @@
+Id,Name,Type,Icon,Price,Slot,Level
+Id,名称,类型,图标,价格,槽位,等级
+51001,AssassinArmor [Paint],5,Boots/Level1/0001,5,Boot,1
+51002,BanditArmor,5,Boots/Level1/0002,10,Boot,1
+51003,BanditLightArmor [Paint],5,Boots/Level1/0003,15,Boot,1
+51004,BerserkArmor,5,Boots/Level1/0004,20,Boot,1
+51005,CardinalArmor,5,Boots/Level1/0005,25,Boot,1
+51006,CataphractArmor [Paint],5,Boots/Level1/0006,30,Boot,1
+51007,ChainmailLightArmor [Paint],5,Boots/Level1/0007,35,Boot,1
+51008,DarkKnight,5,Boots/Level1/0008,40,Boot,1
+51009,Deserter,5,Boots/Level1/0009,45,Boot,1
+51010,DruidArmor,5,Boots/Level1/0010,50,Boot,1
+51011,FireAdept,5,Boots/Level1/0011,55,Boot,1
+51012,GuardArmor [Paint],5,Boots/Level1/0012,60,Boot,1
+51013,Hermit,5,Boots/Level1/0013,65,Boot,1
+51014,Hunter,5,Boots/Level1/0014,70,Boot,1
+51015,IceWizardArmor,5,Boots/Level1/0015,75,Boot,1
+51016,LeatherJacket,5,Boots/Level1/0016,80,Boot,1
+51017,LeatherLightArmor,5,Boots/Level1/0017,85,Boot,1
+51018,LeatherRivetedArmor,5,Boots/Level1/0018,90,Boot,1
+51019,MarauderArmor [Paint],5,Boots/Level1/0019,95,Boot,1
+51020,MercenaryArmor [Paint],5,Boots/Level1/0020,100,Boot,1
+51021,Militiaman,5,Boots/Level1/0021,105,Boot,1
+51022,MinerCostume,5,Boots/Level1/0022,110,Boot,1
+51023,NecromancerArmor,5,Boots/Level1/0023,115,Boot,1
+51024,NinjaOutfit,5,Boots/Level1/0024,120,Boot,1
+51025,Nomad,5,Boots/Level1/0025,125,Boot,1
+51026,PeasantClothing,5,Boots/Level1/0026,130,Boot,1
+51027,Rags1,5,Boots/Level1/0027,135,Boot,1
+51028,Rags2,5,Boots/Level1/0028,140,Boot,1
+51029,Rags3,5,Boots/Level1/0029,145,Boot,1
+51030,Robe,5,Boots/Level1/0030,150,Boot,1
+51031,RoyalArcherArmor,5,Boots/Level1/0031,155,Boot,1
+51032,ShamanArmor,5,Boots/Level1/0032,160,Boot,1
+51033,SiegeArcherArmor,5,Boots/Level1/0033,165,Boot,1
+51034,SniperArmor,5,Boots/Level1/0034,170,Boot,1
+51035,SpearmanArmor,5,Boots/Level1/0035,175,Boot,1
+51036,StormBringerArmor,5,Boots/Level1/0036,180,Boot,1
+51037,ThiefArmor,5,Boots/Level1/0037,185,Boot,1
+51038,VikingFurArmor,5,Boots/Level1/0038,190,Boot,1
+51039,VikingLightArmor3,5,Boots/Level1/0039,195,Boot,1
+51040,Wanderer,5,Boots/Level1/0040,200,Boot,1
+51041,WarlockArmor,5,Boots/Level1/0041,205,Boot,1
+51042,WaterAdept,5,Boots/Level1/0042,210,Boot,1
+51043,WitchArmor,5,Boots/Level1/0043,215,Boot,1
+52001,BlacksmithCostume,5,Boots/Level2/0001,15,Boot,2
+52002,DwellerArmor,5,Boots/Level2/0002,20,Boot,2
+52003,GladiatorArmor,5,Boots/Level2/0003,25,Boot,2
+52004,HalberdierArmor [Paint],5,Boots/Level2/0004,30,Boot,2
+52005,HunterTunic,5,Boots/Level2/0005,35,Boot,2
+52006,InquisitorArmor,5,Boots/Level2/0006,40,Boot,2
+52007,IronArmor [Paint],5,Boots/Level2/0007,45,Boot,2
+52008,ManticoreArmor,5,Boots/Level2/0008,50,Boot,2
+52009,PyromancerArmor,5,Boots/Level2/0009,55,Boot,2
+52010,RoyalGuard,5,Boots/Level2/0010,60,Boot,2
+52011,Santa1,5,Boots/Level2/0011,65,Boot,2
+52012,Santa2,5,Boots/Level2/0012,70,Boot,2
+52013,SantaHelper,5,Boots/Level2/0013,75,Boot,2
+52014,Slave,5,Boots/Level2/0014,80,Boot,2
+52015,SpikedArmor,5,Boots/Level2/0015,85,Boot,2
+52016,VikingLightArmor1,5,Boots/Level2/0016,90,Boot,2
+52017,VikingLightArmor2,5,Boots/Level2/0017,95,Boot,2
+53001,ArielDress [Paint],5,Boots/Level3/0001,45,Boot,3
+53002,CrusaderChainmail [Paint],5,Boots/Level3/0002,50,Boot,3
+53003,DestroyerArmor [Paint],5,Boots/Level3/0003,55,Boot,3
+53004,EliteGuardArmor [Paint],5,Boots/Level3/0004,60,Boot,3
+53005,FalconLightArmor,5,Boots/Level3/0005,65,Boot,3
+53006,GguardsmenArmor [Paint],5,Boots/Level3/0006,70,Boot,3
+53007,GreyKnight,5,Boots/Level3/0007,75,Boot,3
+53008,HunterLightArmor,5,Boots/Level3/0008,80,Boot,3
+53009,IronPlateArmor [Paint],5,Boots/Level3/0009,85,Boot,3
+53010,KnightArmor [Paint],5,Boots/Level3/0010,90,Boot,3
+53011,KnightArmor,5,Boots/Level3/0011,95,Boot,3
+53012,LandsknechtArmor,5,Boots/Level3/0012,100,Boot,3
+53013,PathfinderArmor,5,Boots/Level3/0013,105,Boot,3
+53014,WaterWizardArmor,5,Boots/Level3/0014,110,Boot,3
+54001,Cleric [Paint],5,Boots/Level4/0001,135,Boot,4
+54002,Ninja1 [Paint],5,Boots/Level4/0002,140,Boot,4
+54003,Ninja2 [Paint],5,Boots/Level4/0003,145,Boot,4
+54004,Ninja3,5,Boots/Level4/0004,150,Boot,4
+54005,RangerArmor,5,Boots/Level4/0005,155,Boot,4
+54006,SamuraiElder,5,Boots/Level4/0006,160,Boot,4
+54007,SamuraiHeavy1,5,Boots/Level4/0007,165,Boot,4
+54008,SamuraiHeavy2,5,Boots/Level4/0008,170,Boot,4
+54009,SamuraiHeavy3,5,Boots/Level4/0009,175,Boot,4
+54010,SamuraiLight1,5,Boots/Level4/0010,180,Boot,4
+54011,SamuraiLight2,5,Boots/Level4/0011,185,Boot,4
+54012,SamuraiLight3,5,Boots/Level4/0012,190,Boot,4
+54013,Scout [Paint],5,Boots/Level4/0013,195,Boot,4
+55001,BaseballOutfit,5,Boots/Level5/0001,405,Boot,5
+55002,FireKnightArmor [Paint],5,Boots/Level5/0002,410,Boot,5
+55003,FireWarriorArmor,5,Boots/Level5/0003,415,Boot,5
+55004,SandElder,5,Boots/Level5/0004,420,Boot,5
+55005,SandHealer1,5,Boots/Level5/0005,425,Boot,5
+55006,SandHealer2,5,Boots/Level5/0006,430,Boot,5
+55007,SandMage1,5,Boots/Level5/0007,435,Boot,5
+55008,SandMage2,5,Boots/Level5/0008,440,Boot,5
+55009,SandShooter1,5,Boots/Level5/0009,445,Boot,5
+55010,SandShooter2,5,Boots/Level5/0010,450,Boot,5
+55011,SandWarrior1,5,Boots/Level5/0011,455,Boot,5
+55012,SandWarrior2,5,Boots/Level5/0012,460,Boot,5
+55013,VikingRoughArmor2,5,Boots/Level5/0013,465,Boot,5
+56001,ChampionArmor,5,Boots/Level6/0001,1215,Boot,6
+56002,FarmerClothes,5,Boots/Level6/0002,1220,Boot,6
+56003,HeavyArmor [Paint],5,Boots/Level6/0003,1225,Boot,6
+56004,SwampElder,5,Boots/Level6/0004,1230,Boot,6
+56005,SwampHealer1,5,Boots/Level6/0005,1235,Boot,6
+56006,SwampHealer2,5,Boots/Level6/0006,1240,Boot,6
+56007,SwampMage1,5,Boots/Level6/0007,1245,Boot,6
+56008,SwampMage2,5,Boots/Level6/0008,1250,Boot,6
+56009,SwampShooter1,5,Boots/Level6/0009,1255,Boot,6
+56010,SwampShooter2,5,Boots/Level6/0010,1260,Boot,6
+56011,SwampWarrior1,5,Boots/Level6/0011,1265,Boot,6
+56012,SwampWarrior2,5,Boots/Level6/0012,1270,Boot,6
+56013,VikingRoughArmor1,5,Boots/Level6/0013,1275,Boot,6
+57001,BishopArmor,5,Boots/Level7/0001,3645,Boot,7
+57002,DarkMountain,5,Boots/Level7/0002,3650,Boot,7
+57003,FireWizardArmor,5,Boots/Level7/0003,3655,Boot,7
+57004,FreeFolk [Paint],5,Boots/Level7/0004,3660,Boot,7
+57005,GoldLion,5,Boots/Level7/0005,3665,Boot,7
+57006,HorseLord,5,Boots/Level7/0006,3670,Boot,7
+57007,IronIslands,5,Boots/Level7/0007,3675,Boot,7
+57008,LittleLion,5,Boots/Level7/0008,3680,Boot,7
+57009,Mountain [Paint],5,Boots/Level7/0009,3685,Boot,7
+57010,NightsWatch [Paint],5,Boots/Level7/0010,3690,Boot,7
+57011,NorthWarden,5,Boots/Level7/0011,3695,Boot,7
+57012,PaladinArmor [Paint],5,Boots/Level7/0012,3700,Boot,7
+57013,RedLion,5,Boots/Level7/0013,3705,Boot,7
+57014,SandWarrior,5,Boots/Level7/0014,3710,Boot,7
+57015,VikingRoughArmor3 [Paint],5,Boots/Level7/0015,3715,Boot,7
+57016,WitchHunterArmor [Paint],5,Boots/Level7/0016,3720,Boot,7

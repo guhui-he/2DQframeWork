@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d4780a6a47401744a3f323c410927af, type: 3}
+  m_Name: ItemAffixConfig
+  m_EditorClassIdentifier: 
+  ValueConfigs:
+  - Stat: 0
+    MinBase: 3
+    MaxBase: 8
+    GrowthRate: 0.2
+    PriceWeight: 5
+  - Stat: 1
+    MinBase: 2
+    MaxBase: 5
+    GrowthRate: 0.2
+    PriceWeight: 4
+  - Stat: 2
+    MinBase: 7
+    MaxBase: 10
+    GrowthRate: 0.3
+    PriceWeight: 2
+  - Stat: 3
+    MinBase: 2
+    MaxBase: 5
+    GrowthRate: 0.2
+    PriceWeight: 10
+  - Stat: 4
+    MinBase: 1
+    MaxBase: 3
+    GrowthRate: 0.2
+    PriceWeight: 10
+  PoolConfigs:
+  - Type: 0
+    Stats: 0000000003000000040000000500000006000000
+  - Type: 1
+    Stats: 01000000020000000400000005000000
+  - Type: 2
+    Stats: 02000000010000000300000004000000
+  - Type: 3
+    Stats: 0200000001000000030000000400000005000000
+  - Type: 4
+    Stats: 05000000010000000200000003000000
+  - Type: 5
+    Stats: 00000000030000000400000006000000
+  CountConfigs:
+  - MinLevel: 1
+    MaxLevel: 2
+    MinCount: 0
+    MaxCount: 2
+  - MinLevel: 3
+    MaxLevel: 4
+    MinCount: 1
+    MaxCount: 3
+  - MinLevel: 5
+    MaxLevel: 6
+    MinCount: 2
+    MaxCount: 4
+  - MinLevel: 7
+    MaxLevel: 7
+    MinCount: 3
+    MaxCount: 5

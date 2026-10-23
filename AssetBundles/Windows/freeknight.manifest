@@ -1,0 +1,51 @@
+ManifestFileVersion: 0
+CRC: 3679342783
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 95b7470118adacfc25009eb2f9d10511
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2d8df09e698f722ada1caa03d3413830
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 95b7470118adacfc25009eb2f9d10511
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Sprites/monster/freeKnight/_TurnAround.png
+- Assets/Art/Sprites/monster/freeKnight/_Attack2.png
+- Assets/Art/Sprites/monster/freeKnight/_WallSlide.png
+- Assets/Art/Sprites/monster/freeKnight/_Jump.png
+- Assets/Art/Sprites/monster/freeKnight/_AttackCombo.png
+- Assets/Art/Sprites/monster/freeKnight/_WallHang.png
+- Assets/Art/Sprites/monster/freeKnight/_JumpFallInbetween.png
+- Assets/Art/Sprites/monster/freeKnight/_Run.png
+- Assets/Art/Sprites/monster/freeKnight/_CrouchAll.png
+- Assets/Art/Sprites/monster/freeKnight/_Fall.png
+- Assets/Art/Sprites/monster/freeKnight/_Hit.png
+- Assets/Art/Sprites/monster/freeKnight/_AttackNoMovement.png
+- Assets/Art/Sprites/monster/freeKnight/_WallClimbNoMovement.png
+- Assets/Art/Sprites/monster/freeKnight/_AttackComboNoMovement.png
+- Assets/Art/Sprites/monster/freeKnight/_Dash.png
+- Assets/Art/Sprites/monster/freeKnight/_Roll.png
+- Assets/Art/Sprites/monster/freeKnight/_SlideTransitionStart.png
+- Assets/Art/Sprites/monster/freeKnight/_Crouch.png
+- Assets/Art/Sprites/monster/freeKnight/_Attack.png
+- Assets/Art/Sprites/monster/freeKnight/_WallClimb.png
+- Assets/Art/Sprites/monster/freeKnight/_Idle.png
+- Assets/Art/Sprites/monster/freeKnight/_CrouchWalk.png
+- Assets/Art/Sprites/monster/freeKnight/_SlideTransitionEnd.png
+- Assets/Art/Sprites/monster/freeKnight/_Death.png
+- Assets/Art/Sprites/monster/freeKnight/_Slide.png
+- Assets/Art/Sprites/monster/freeKnight/_CrouchTransition.png
+- Assets/Art/Sprites/monster/freeKnight/_CrouchAttack.png
+- Assets/Art/Sprites/monster/freeKnight/_Attack2NoMovement.png
+- Assets/Art/Sprites/monster/freeKnight/_DeathNoMovement.png
+- Assets/Art/Sprites/monster/freeKnight/_SlideAll.png
+Dependencies: []

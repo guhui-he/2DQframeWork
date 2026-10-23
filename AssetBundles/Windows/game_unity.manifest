@@ -1,0 +1,87 @@
+ManifestFileVersion: 0
+CRC: 2149704358
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 890f597d8a92bbdd61794664c5ef5fac
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 910e16d6c6071a0d9b12838dfca9af49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 890f597d8a92bbdd61794664c5ef5fac
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 66
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 59fa48bcbfb5871458c0f623dcd9c86d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 97d188c3da3a83a40b4ea31c70bb75e0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 411e729afed24c62a04e2b99d9122e78, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 81936539ae2d84665a86a2b3f531955f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ab242bebe4de4de4e94f38ef071a0b92, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c6bfc5518489b744daf6d72c0bbb8c50, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: db109d730ed88cf47b498599bb9af01d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 895c55adc73ff834e864f068993a2394, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 19719996
+  Script: {instanceID: 0}
+- Class: 156049354
+  Script: {instanceID: 0}
+- Class: 483693784
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+- Class: 1839735485
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/Game.unity
+Dependencies:
+- D:/UnityLearn/2DQframeWork/AssetBundles/Windows/freeknight
