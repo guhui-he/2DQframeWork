@@ -9,17 +9,17 @@ namespace Game
 	}
 	public partial class BuildEnterPanel : UIPanel,IController,ICanSendEvent
 	{
-		private IBuildModel mBuildModel;
+		private ICityConfigModel mBuildModel;
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as BuildEnterPanelData ?? new BuildEnterPanelData();
-			mBuildModel=this.GetModel<IBuildModel>();
-			var buildModel = mBuildModel.GetBuildData(mData.id);
+			mBuildModel=this.GetModel<ICityConfigModel>();
+			var buildModel = mBuildModel.GetCityConfig(mData.id);
 			nameTxt.text = buildModel.Name;
 			desTxt.text = buildModel.Des;
 			enterBtn.onClick.AddListener(() =>
 			{
-                this.SendCommand(new EnterTownCommand(mData.id));
+                this.SendCommand(new EnterCityCommand(mData.id));
                 //CloseSelf();
             });
 		}

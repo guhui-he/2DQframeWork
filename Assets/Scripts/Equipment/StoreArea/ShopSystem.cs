@@ -13,19 +13,21 @@ namespace Game
     {
         IShopModel mShopModel;
         ITimeModel mTimeModel;
+        IPlayerModel mPlayerModel;
         int id;
         protected override void OnInit()
         {
             
             mShopModel = this.GetModel<IShopModel>();
             mTimeModel = this.GetModel<ITimeModel>();
-            this.RegisterEvent<TownEnterEvent>(e =>
+            mPlayerModel = this.GetModel<IPlayerModel>();
+            mPlayerModel.CurrentCityId.RegisterWithInitValue(e =>
             {
-                id = e.BuildId;
-                TryRefreshShop();
+                TryRefreshShop(e);
+                id = e;
             });
         }
-        void TryRefreshShop()
+        void TryRefreshShop(int id)
         {
             var LastRefreshTime = mShopModel.GetFreshTime(id);
             var currentTime = mTimeModel.TotalGameSeconds.Value;

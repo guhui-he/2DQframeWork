@@ -1,0 +1,17 @@
+Monster_Normal_53.png
+size:60,184
+pma:true
+Body
+bounds:0,0,35,31
+Die
+bounds:0,130,54,52
+Head
+bounds:0,76,54,52
+Tail
+bounds:6,33,49,43
+rotate:90
+Wing_L
+bounds:36,10,28,22
+rotate:270
+Wing_R
+bounds:41,33,16,12

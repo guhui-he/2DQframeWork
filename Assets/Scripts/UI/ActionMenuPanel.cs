@@ -1,8 +1,4 @@
 using QFramework;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UI;
-
 namespace Game
 {
 	public class ActionMenuPanelData : UIPanelData
@@ -17,7 +13,7 @@ namespace Game
 			Attack.onClick.AddListener(() =>
 			{
                 CloseSelf();
-                this.SendCommand(new EnterAttackCommand());
+                this.SendCommand(new EnterAttackCommand(1003));
 
 			});
 			Idle.onClick.AddListener(() =>

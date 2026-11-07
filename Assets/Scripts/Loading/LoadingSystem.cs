@@ -21,10 +21,8 @@ namespace Game
 
         public void LoadSceneAsync(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
         {
-            // 1. 通知"开始加载"
-            this.SendEvent(new SceneLoadStartEvent(sceneName));
-
-            // 2. 用 ResKit 异步加载场景
+            //this.SendEvent(new SceneLoadStartEvent(sceneName));
+            this.SendEvent(new OpenPanelEvent { PanelId = UIPanelId.LoadingPanel });
             mResLoader.LoadSceneAsync(sceneName, mode,
               onStartLoading: (Operation) =>
                {

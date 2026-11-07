@@ -23,25 +23,26 @@ namespace Game
         {
             if (item == null) return false;          
             var slot = item.itemData.Type;
-            var previous = mHero.GetHero().Equipment.GetEquipped(slot);
+            var previous = mHero.GetCurHero().Equipment.GetEquipped(slot);
             mBag.RemoveItem(item);
             if (previous != null)
             {
                 Unequip(slot);
             }
             item.area = AreaType.Equipment;
-            mHero.GetHero().Equipment.SetEquipped(slot, item);
+            mHero.GetCurHero().Equipment.SetEquipped(slot, item);
+            this.SendEvent(new EquipmentChangedEvent());
             return true;
         }
 
         public bool Unequip(ItemType slot)
         {
-            var item = mHero.GetHero().Equipment.GetEquipped(slot);
+            var item = mHero.GetCurHero().Equipment.GetEquipped(slot);
             if (item == null) return false;
 
-            mHero.GetHero().Equipment.RemoveEquipped(slot);
+            mHero.GetCurHero().Equipment.RemoveEquipped(slot);
             mBag.AddItem(item);
-
+            this.SendEvent(new EquipmentChangedEvent());
             return true;
         }
     }

@@ -32,32 +32,27 @@ namespace Game
         public string Icon;
         public string Model;
 
-        public int MaxHp;
+        public List<AffixSaveData> Stats = new List<AffixSaveData>();
         public int CurHp;
-        public int Atk;
-        public int Def;
-        public int Step;
-        public int Crit;
-        public int Avd;
-        public int AtkRange;
 
         public bool isBuy;
         public int Level;
         public int Curexp;
         public int PendingPoints;
-
+        public int SkillPoints;
         public List<IntIntPair> Talents = new List<IntIntPair>();
         public List<IntItemPair> Equipments = new List<IntItemPair>();
+        public List<int> SkillIds= new List<int>();
     }
 
     public class ItemInfoSaveData
     {
         public int ConfigId;
         public int Area;
-        public List<ItemAffixSaveData> Affixes = new List<ItemAffixSaveData>();
+        public List<AffixSaveData> Affixes = new List<AffixSaveData>();
     }
 
-    public class ItemAffixSaveData
+    public class AffixSaveData
     {
         public int Stat;
         public int Value;

@@ -9,7 +9,7 @@ namespace Game
         void GenerateMap(int rowCount, int colCount, BlockRawData[] rawData);
     }
 
-    public class MapGenerateSystem : AbstractSystem, IMapGenerateSystem
+    public class MapGenerateSystem : AbstractSystem, IMapGenerateSystem,ICanSendCommand
     {
         private IMapModel mMapModel;
         private IEnemyModel mEnemyModel;
@@ -20,7 +20,6 @@ namespace Game
             mMapModel = this.GetModel<IMapModel>();
             mEnemyModel = this.GetModel<IEnemyModel>();
             mBattleModel = this.GetModel<IBattleModel>();
-
             this.RegisterEvent<SceneEnterEvent>(e =>
             {
                 mPendingEnemyId = e.EnemyId;
@@ -44,30 +43,16 @@ namespace Game
         private void GenerateEnemy(int id)
         {
             var enemies = mEnemyModel.GetRoleInfos(id);
-            if (enemies == null || enemies.Count == 0) return;
             var availablePositions = GetAvailablePositions();
             Shuffle(availablePositions);
 
-            var loader = this.GetUtility<IPrefabLoaderUtility>();
             for (int i = 0; i < enemies.Count; i++)
             {
+                if (i >= availablePositions.Count) break;
+
                 var enemyInfo = enemies[i];
                 var pos = availablePositions[i];
-                var data = new BattleUnitData(enemies[i].Id, enemyInfo, false, pos);
-                mBattleModel.AddUnit(data);
-                Debug.Log(data.UnitId);
-                if (BlockViewRegistry.TryGetWorldPosition(pos, out var wp))
-                {
-                    var obj = loader.Instantiate(enemyInfo.Model, pos: new Vector3(wp.x, wp.y, -1));
-                    if (obj != null)
-                    {
-                        var view = obj.GetComponent<BattleUnitView>();
-                        if (view != null)
-                        {
-                            view.UnitId = data.UnitId;
-                        }
-                    }
-                }
+                this.SendCommand(new SpawnUnitCommand(enemyInfo, pos, false));
             }
         }
 

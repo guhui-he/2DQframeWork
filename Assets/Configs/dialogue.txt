@@ -1,0 +1,5 @@
+Id,GraphPath,Remark
+注释,对话ID,资源路径,备注
+1001,Blacksmith_Default,铁匠默认对话
+1002,Blacksmith_Quest,铁匠交任务对话
+1003,Npc_Random,路人闲聊

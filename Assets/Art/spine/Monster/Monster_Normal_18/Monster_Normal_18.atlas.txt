@@ -1,0 +1,27 @@
+Monster_Normal_18.png
+size:224,76
+pma:true
+LArm
+bounds:201,5,17,19
+rotate:90
+Lf
+bounds:186,46,28,32
+offsets:0,0,29,32
+rotate:90
+RArm
+bounds:179,20,22,20
+rotate:90
+Rf
+bounds:145,8,32,34
+body
+bounds:77,8,66,66
+did face2
+bounds:2,8,66,73
+rotate:90
+mushroom 2
+bounds:201,24,20,18
+rotate:90
+mushroom 3
+bounds:179,2,16,16
+mushroom head
+bounds:145,44,39,30

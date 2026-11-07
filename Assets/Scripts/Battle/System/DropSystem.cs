@@ -16,10 +16,8 @@ namespace Game
             mLootModel=this.GetModel<ILootModel>();
             //  监听死亡事件，执行掉落逻辑
             this.RegisterEvent<UnitDieEvent>(e =>
-            {
-                
-                var unit = mBattleModel.AllUnits.FirstOrDefault(u => u.UnitId == e.UnitId);
-             
+            {              
+                var unit = mBattleModel.AllUnits.FirstOrDefault(u => u.UnitId == e.UnitId);          
                 TryDrop(unit);
             });
         }

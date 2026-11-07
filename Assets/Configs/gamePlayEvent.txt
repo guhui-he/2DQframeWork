@@ -1,0 +1,6 @@
+Id,Type,Param1,Param2,Des
+事件ID,事件类型,参数1,参数2,备注
+5001,AcceptQuest,1001,0,接受任务1001
+5002,GiveItem,2001,5,获得5把铁剑
+5003,RecruitPartner,3001,0,招募伙伴3001
+5004,OpenPanel,1017,0,打开1001面板

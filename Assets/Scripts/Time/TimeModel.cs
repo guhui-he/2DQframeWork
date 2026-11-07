@@ -7,6 +7,7 @@ namespace Game
     {
         BindableProperty<float> TotalGameSeconds { get; }
         BindableProperty<bool> IsPaused { get; }
+        BindableProperty<float> TimeScale { get; }
         int PauseCount { get; set; }
         int Day { get; }
         int Hour { get; }
@@ -18,6 +19,7 @@ namespace Game
     {
         public BindableProperty<float> TotalGameSeconds { get; } = new(0f);
         public BindableProperty<bool> IsPaused { get; } = new(false);
+        public BindableProperty<float> TimeScale { get; } = new(1f);
         public int PauseCount { get; set; } = 0;
 
         // 现实 1 秒 = 游戏 60 秒（1分钟）

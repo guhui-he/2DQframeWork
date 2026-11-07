@@ -1,0 +1,24 @@
+Monster_Normal_26.png
+size:184,112
+pma:true
+body
+bounds:2,36,88,74
+die head
+bounds:142,72,40,38
+head
+bounds:142,32,40,38
+lEar
+bounds:96,5,23,29
+leg
+bounds:121,2,28,21
+rotate:90
+leg2
+bounds:92,36,42,29
+leg3
+bounds:2,9,65,25
+leg4
+bounds:92,67,48,43
+leg5
+bounds:144,7,24,23
+rEar
+bounds:69,2,25,32

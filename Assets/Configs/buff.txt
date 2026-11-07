@@ -1,0 +1,8 @@
+Id,Name,Icon,Des,IsDebuff,Duration,Modifiers,TickTiming,TickEffectId,TickValue,TickVfxId
+注释,名称,图标,描述,是否减益,持续回合,属性修改,触发时机,触发效果ID,触发数值,触发特效Id
+2001,中毒,icon_poison,每回合损失5点生命值,true,3,None,TurnStart,1001,5,1007
+2002,狂暴,icon_rage,攻击力提升30%，移动力+2,false,2,Attack:Percent:0.3|Step:Flat:2,None,0,0,0
+2003,再生,icon_regen,每回合恢复30点生命值,false,3,None,TurnStart,1002,30,1007
+2004,铁壁,icon_iron,防御力+20，生命上限+100,false,2,Defense:Flat:20|MaxHp:Flat:100,None,0,0,0
+2005,虚弱,icon_weak,攻击力降低30%，防御力降低50%,true,2,Attack:Percent:-0.3|Defense:Percent:-0.5,None,0,0,0
+2006,加速,icon_haste,移动力+3,false,2,Step:Flat:3,None,0,0,0

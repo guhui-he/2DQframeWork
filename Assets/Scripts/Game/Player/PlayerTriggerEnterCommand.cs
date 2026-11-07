@@ -18,8 +18,9 @@ namespace Game
         protected override void OnExecute()
         {
             if (mOther.CompareTag("Build"))
-            {               
-                this.GetSystem<IBuildTriggerSystem>().PlayerEnterBuild(1002);
+            {
+                 var id=mOther.GetComponent<City>().CityId;
+                this.GetSystem<IBuildTriggerSystem>().PlayerEnterBuild(id);
             }
             else if (mOther.CompareTag("Enemy"))
             {

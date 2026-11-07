@@ -2,11 +2,11 @@
 
 namespace Game
 {
-    public class ItemAffix
+    public class StatAffix
     {
         public AffixStatType Stat;
         public int Value;
-        public ItemAffix(AffixStatType stat, int value)
+        public StatAffix(AffixStatType stat, int value)
         {
             Stat = stat;
             Value = value;

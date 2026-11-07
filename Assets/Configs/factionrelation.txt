@@ -1,0 +1,8 @@
+Id,FactionA,FactionB,Attitude,Remark
+注释,ID,势力A,势力B,是否敌对,备注
+1,City,Nest,,Hostile,城市与巢穴敌对
+2,City,Wanderer,,Hostile,城市卫队清剿野怪
+3,City,Player,Neutral,城市对玩家默认中立(可被通缉改变)
+4,Nest,Player,Hostile,巢穴怪物主动攻击玩家
+5,Player,Wanderer,Hostile,野怪主动攻击玩家
+6,Nest,Wanderer,Neutral,巢穴与野怪默认中立互不干涉

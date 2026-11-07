@@ -12,12 +12,14 @@ namespace Game
         BindableProperty<Vector2> Velocity { get; }
         BindableProperty<FacingDir> Facing { get; }
         float MoveSpeed { get; }
+        Faction Faction { get; }
         bool HasLoadedPosition { get; set; }
+        BindableProperty<int> CurrentCityId { get; }
     }
 
     public class PlayerModel : AbstractModel, IPlayerModel
     {
-        public BindableProperty<Vector2> Position { get; } = new BindableProperty<Vector2>(Vector2.zero);
+        public BindableProperty<Vector2> Position { get; } = new BindableProperty<Vector2>(new Vector2(10,10));
         public BindableProperty<Vector2> Direction { get; } = new BindableProperty<Vector2>(Vector2.zero);
 
         public BindableProperty<Vector2> Velocity { get; } = new BindableProperty<Vector2>(Vector2.zero);
@@ -25,6 +27,8 @@ namespace Game
         public BindableProperty<FacingDir> Facing { get; } = new BindableProperty<FacingDir>(FacingDir.Right);
         public float MoveSpeed { get; } = 3.5f;
         public bool HasLoadedPosition { get; set; } = false;
+        public Faction Faction { get; }=Faction.Player;
+        public BindableProperty<int> CurrentCityId { get; }=new BindableProperty<int>(1001);
         protected override void OnInit() { }
     }
 }

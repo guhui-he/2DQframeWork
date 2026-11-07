@@ -8,8 +8,9 @@ namespace Game
     {
         void Pause();
         void Resume();
-
+        void SetTimeScale(float scale);
         IUnRegister RegisterTick(Action<float> onTick);
+        IUnRegister RegisterRealTick(Action<float> onRealTick);
     }
 
     public class TimeSystem : AbstractSystem, ITimeSystem
@@ -18,7 +19,7 @@ namespace Game
         private int mLastDay;
 
         private event Action<float> mOnTick;
-
+        private event Action<float> mOnRealTick;
         protected override void OnInit()
         {
             mModel = this.GetModel<ITimeModel>();
@@ -31,10 +32,12 @@ namespace Game
         {
             if (mModel.IsPaused.Value) return;
 
-            float addSeconds = Time.deltaTime * mModel.SecondsPerRealSecond;
+            float safeUnscaledDeltaTime = Mathf.Min(Time.unscaledDeltaTime, 0.1f);
+
+            float addSeconds = safeUnscaledDeltaTime * mModel.SecondsPerRealSecond * mModel.TimeScale.Value;
             mModel.TotalGameSeconds.Value += addSeconds;
             mOnTick?.Invoke(addSeconds);
-
+            mOnRealTick?.Invoke(safeUnscaledDeltaTime);
             DetectTimeBoundary();
         }
 
@@ -47,11 +50,13 @@ namespace Game
                 this.SendEvent(new DayChangedEvent { Day = currentDay });
             }
         }
-
+        public void SetTimeScale(float scale)
+        {
+            mModel.TimeScale.Value = scale;
+        }
         public void Pause()
         {
             mModel.PauseCount++;
-            Debug.Log(mModel.PauseCount);
             if (mModel.PauseCount > 0) mModel.IsPaused.Value = true;
         }
 
@@ -68,6 +73,11 @@ namespace Game
         {
             mOnTick += onTick;
             return new CustomUnRegister(() => { mOnTick -= onTick; });
+        }
+        public IUnRegister RegisterRealTick(Action<float> onRealTick)
+        {
+            mOnRealTick += onRealTick;
+            return new CustomUnRegister(() => { mOnRealTick -= onRealTick; });
         }
     }
 

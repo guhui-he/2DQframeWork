@@ -5,7 +5,7 @@ using QFramework;
 
 namespace Game
 {
-	// Generate Id:d46796dc-6f1d-45ae-8e69-ddb5108be6ff
+	// Generate Id:d0fc2350-aff9-4bfd-b016-71bab4e1183d
 	public partial class BagPanel
 	{
 		public const string Name = "BagPanel";

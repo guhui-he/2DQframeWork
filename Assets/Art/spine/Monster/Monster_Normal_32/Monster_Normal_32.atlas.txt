@@ -1,0 +1,13 @@
+Monster_Normal_32.png
+size:232,92
+pma:true
+arm_L
+bounds:198,1,33,45
+arm_R
+bounds:179,47,46,42
+rotate:180
+body
+bounds:0,0,119,89
+die body
+bounds:80,0,119,89
+rotate:180

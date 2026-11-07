@@ -22,7 +22,7 @@ namespace Game
 				case "emofashi_M":
 					emofashi_M.SetActive(true);
 					break;
-				case "qinagbin_M":
+				case "qingbin_M":
 					hero2.SetActive(true);
 					break ;
 				case "pig_M":

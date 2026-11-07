@@ -18,7 +18,6 @@ namespace Game
         protected override void OnInit()
         {
             mResLoader = ResLoader.Allocate();
-            // 注册所有要加载的表
             foreach (var tableName in ConfigConstants.AllTables)
                 LoadTable(tableName,tableName);
         }

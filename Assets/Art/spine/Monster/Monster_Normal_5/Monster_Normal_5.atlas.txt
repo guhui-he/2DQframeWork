@@ -1,0 +1,26 @@
+Monster_Normal_5.png
+size:108,120
+pma:true
+BLF
+bounds:94,19,10,8
+BRF
+bounds:82,8,8,7
+FLF
+bounds:94,9,9,8
+FRF
+bounds:82,17,10,8
+Lhorn
+bounds:74,86,29,30
+rotate:90
+Rhorn
+bounds:74,54,29,30
+body
+bounds:2,2,78,49
+die eye
+bounds:82,27,25,10
+rotate:90
+eye
+bounds:94,29,23,7
+rotate:90
+head
+bounds:2,53,70,62

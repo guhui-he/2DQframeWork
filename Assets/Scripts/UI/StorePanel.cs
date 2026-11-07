@@ -3,19 +3,20 @@ namespace Game
 {
 	public class StorePanelData : UIPanelData
 	{
-        public int buildId;
 	}
 	public partial class StorePanel : UIPanel,IController
 	{
 		private IShopModel mShopModel;
         private IBagModel mBagModel;
+        IPlayerModel mPlayerModel;
         protected override void OnInit(IUIData uiData = null)
         {
             mData = uiData as StorePanelData ?? new StorePanelData();
             close.onClick.AddListener(CloseSelf);
-
             mShopModel = this.GetModel<IShopModel>();
-            var mBindList = mShopModel.Items[mData.buildId];
+            mPlayerModel = this.GetModel<IPlayerModel>();
+
+            var mBindList = mShopModel.Items[mPlayerModel.CurrentCityId.Value];
             mBindList.OnAdd.Register((index, item) =>
             {
                 StoreContent.Append(item);
@@ -52,9 +53,9 @@ namespace Game
         private void RefreshAll()
         {
             StoreContent.Clear();
-            for (int i = 0; i < mShopModel.Items[mData.buildId].Count; i++)
+            for (int i = 0; i < mShopModel.Items[mPlayerModel.CurrentCityId.Value].Count; i++)
             {
-                StoreContent.Append(mShopModel.Items[mData.buildId][i]);
+                StoreContent.Append(mShopModel.Items[mPlayerModel.CurrentCityId.Value][i]);
             }
             BagContent.Clear();
             for(int i = 0;i < mBagModel.Items.Count;i++)

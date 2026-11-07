@@ -1,3 +1,8 @@
-Id,Money
-Id,金币
-10001,1000
+Id,Name,Icon,Model,Info,HpMin,HpMax,AtkMin,AtkMax,DefMin,DefMax,StepMin,StepMax,CritMin,CritMax,AvdMin,AvdMax,Ani
+Id,名称,图标,模型,描述,血量小,血量大,攻击小,攻击大,防御小,防御大,行动小,行动大,暴击小,暴击大,闪避小,闪避大,动画
+10001,恶魔法师,emofashi_M,Hero,身披重甲的没落贵族，擅长冲锋陷阵,40,80,10,15,10,15,3,6,10,15,10,15,sanim_125151_SkeletonData
+10002,恶魔枪兵,hero2,Hero,手持长枪的雇佣兵，以距离控制战场,40,70,30,45,10,15,3,7,10,15,10,15,sanim_135091_SkeletonData
+10003,野猪,pig,Hero,凶猛的山林野猪，皮糙肉厚,100,150,10,15,40,45,3,5,10,15,10,15,sanim_144061_SkeletonData
+20001,恶魔骑士,enemy01,Enemy,堕落的恶魔骑士,50,55,45,75,5,10,3,6,10,15,10,15,Monster_Boss_1002_SkeletonData
+20002,哥布林,enemy02,Enemy,绿皮小怪,45,70,10,15,5,10,3,6,10,15,10,15,Monster_Boss_1003_SkeletonData
+20003,雪怪,enemy03,Enemy,冰原巨兽,100,150,10,15,10,15,3,6,10,15,10,15,Monster_Boss_1004_SkeletonData

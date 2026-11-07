@@ -1,0 +1,45 @@
+Monster_Boss_1002.png
+size:244,168
+pma:true
+Body
+bounds:2,50,84,116
+Eye
+bounds:144,62,9,6
+Head
+bounds:211,136,30,31
+offsets:1,1,32,33
+rotate:90
+L Leg 1
+bounds:34,3,57,45
+L Leg 2
+bounds:203,7,26,33
+L arm 1
+bounds:88,62,54,52
+L arm 2
+bounds:150,122,44,59
+rotate:90
+L arm 3
+bounds:132,8,36,52
+L hand
+bounds:196,42,33,33
+R Leg 1
+bounds:88,116,60,50
+R Leg 2
+bounds:170,32,24,36
+R arm 1
+bounds:144,70,42,44
+R arm 2
+bounds:93,2,37,58
+R arm3
+bounds:2,2,30,46
+R hand
+bounds:170,2,28,31
+rotate:90
+Roon
+bounds:225,84,11,18
+Waist
+bounds:188,77,25,35
+rotate:90
+die Head
+bounds:211,104,30,31
+rotate:90

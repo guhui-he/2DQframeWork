@@ -1,0 +1,24 @@
+Monster_Normal_10.png
+size:200,96
+pma:true
+AC
+bounds:169,68,27,26
+Attack_Object
+bounds:132,59,35,35
+B
+bounds:2,2,92,63
+rotate:90
+BLF
+bounds:160,20,22,22
+BRF
+bounds:132,14,19,21
+rotate:90
+FLF
+bounds:132,35,22,26
+rotate:90
+FRF
+bounds:169,44,22,28
+rotate:90
+die head
+bounds:67,2,92,63
+rotate:90

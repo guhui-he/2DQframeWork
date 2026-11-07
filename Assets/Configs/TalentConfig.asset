@@ -49,6 +49,12 @@ MonoBehaviour:
     - {x: 3, y: 6}
     - {x: 4, y: 7}
     - {x: 4, y: 9}
+  - Stat: 6
+    Ranges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 2}
   HighStarCount: 3
   HighStarRange: {x: 2, y: 3}
   LowStarRange: {x: 0, y: 1}

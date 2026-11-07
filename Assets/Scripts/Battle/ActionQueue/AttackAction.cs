@@ -1,45 +1,55 @@
-﻿using QFramework;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
 {
     public class AttackAction : IBattleAction
     {
-        private enum Step { Start, WaitBeforeHit, WaitAfterHit, Done }
+        // ★ 增加一个飞行阶段
+        private enum Step { Start, WaitBeforeHit, ProjectileFlying, WaitAfterHit, Done }
 
         private readonly BattleUnitData mAttacker;
-        private readonly BattleUnitData mTarget;
+        private readonly List<BattleUnitData> mTargets;
+        private readonly SkillInfo mSkill;
+        private readonly GridPos mTargetPos;
         private Step mStep;
         private float mTimer;
 
-        public AttackAction(BattleUnitData attacker, BattleUnitData target)
+        public AttackAction(BattleUnitData attacker, List<BattleUnitData> targets, SkillInfo skill, GridPos targetPos)
         {
             mAttacker = attacker;
-            mTarget = target;
+            mTargets = targets;
+            mSkill = skill;
+            mTargetPos = targetPos;
         }
 
         public void OnStart()
         {
             mStep = Step.Start;
+            if (mSkill.Config.cooldown > 0) mSkill.RemainingCd.Value = mSkill.Config.cooldown;
         }
 
         public bool OnUpdate(float dt)
         {
             if (mStep == Step.Done) return true;
 
-            var model = GameApp.Interface.GetModel<IBattleModel>();
-            if (model.Phase.Value == BattlePhase.GameOver) { Done(); return true; }
-            if (mAttacker == null || !mAttacker.IsAlive || mTarget == null || !mTarget.IsAlive)
-            {
-                Done(); return true;
-            }
-
             switch (mStep)
             {
                 case Step.Start:
-                    // 1. 广播前摇（View 层播挥剑动画）
-                    GameApp.Interface.SendEvent(new UnitAttackEvent { AtkId = mAttacker.UnitId });
-                    mTimer = 1.3f; // 等挥剑动画播完
+                    GameApp.Interface.SendEvent(new UnitAttackEvent { AtkId = mAttacker.UnitId, SkillId = mSkill.Config.id });
+
+                    // 只传 VfxId，不传对象
+                    if (mSkill.Config.CastVfxId > 0)
+                    {
+                        GameApp.Interface.SendEvent(new PlayVfxEvent
+                        {
+                            VfxId = mSkill.Config.CastVfxId,
+                            TargetId = mAttacker.UnitId,
+                            TargetPos = mTargetPos,
+                        });
+                    }
+
+                    mTimer = 1.3f;
                     mStep = Step.WaitBeforeHit;
                     break;
 
@@ -47,10 +57,36 @@ namespace Game
                     mTimer -= dt;
                     if (mTimer <= 0)
                     {
-                        // 2. 动画到位，瞬间结算伤害
-                        GameApp.Interface.GetSystem<ICombatSystem>().ExecuteAttackDirect(mAttacker, mTarget);
-                        mTimer = 0.3f; // 受击后摇/顿帧
-                        mStep = Step.WaitAfterHit;
+                        // 只传 VfxId
+                        if (mSkill.Config.ProjectileVfxId > 0)
+                        {
+                            GameApp.Interface.SendEvent(new SpawnProjectileEvent
+                            {
+                                VfxId = mSkill.Config.ProjectileVfxId,
+                                FromId = mAttacker.UnitId,
+                                Range=mSkill.Config.atkRange,
+                                ToPos = mTargetPos
+                            });
+                            var vfxConfig = GameApp.Interface.GetModel<IVfxModel>().GetVfxConfig(mSkill.Config.ProjectileVfxId);
+                            float speed = (vfxConfig != null && vfxConfig.Speed > 0) ? vfxConfig.Speed : 10f;
+
+                            float distance = mAttacker.Pos.ManhattanTo(mTargetPos);
+                            mTimer = distance / speed;
+                            mStep = Step.ProjectileFlying;
+                        }
+                        else
+                        {
+                            ExecuteHit();
+                        }
+                    }
+                    break;
+
+                case Step.ProjectileFlying:
+                    mTimer -= dt;
+                    if (mTimer <= 0)
+                    {
+                        // 3. 飞行物到达终点，执行命中
+                        ExecuteHit();
                     }
                     break;
 
@@ -58,20 +94,48 @@ namespace Game
                     mTimer -= dt;
                     if (mTimer <= 0)
                     {
-                        GameApp.Interface.SendEvent(new UnitDamagedCompletedEvent { TargetId  = mTarget.UnitId });
+                        if (mTargets != null)
+                        {
+                            foreach (var target in mTargets)
+                            {
+                                if (target != null)
+                                    GameApp.Interface.SendEvent(new UnitDamagedCompletedEvent { TargetId = target.UnitId });
+                            }
+                        }
                         Done();
                     }
                     break;
             }
-
             return mStep == Step.Done;
+        }
+
+        private void ExecuteHit()
+        {
+            if (mSkill.Config.HitVfxId > 0)
+            {
+                GameApp.Interface.SendEvent(new PlayVfxEvent
+                {
+                    VfxId = mSkill.Config.HitVfxId,
+                    TargetPos = mTargetPos
+                });
+            }
+
+            if (mSkill.Effects != null)
+            {
+                foreach (var effect in mSkill.Effects)
+                {
+                    effect.Execute(mAttacker, mTargets, mTargetPos);
+                }
+            }
+
+            mTimer = 0.3f; // 后摇
+            mStep = Step.WaitAfterHit;
         }
 
         public void OnCancel() => Done();
 
         private void Done()
         {
-            // 攻击完毕，标记结束
             if (mAttacker != null && mAttacker.IsAlive)
             {
                 mAttacker.HasActed = true;

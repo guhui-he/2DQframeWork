@@ -12,15 +12,15 @@ namespace Game
 
     public class BuildTriggerSystem : AbstractSystem, IBuildTriggerSystem
     {
-        IBuildModel mBuildModel;
+        ICityConfigModel mBuildModel;
         protected override void OnInit()
         {
-            mBuildModel = this.GetModel<IBuildModel>();
+            mBuildModel = this.GetModel<ICityConfigModel>();
         }
 
         public void PlayerEnterBuild(int buildId)
         {
-            mBuildModel.CurBuildId = buildId;
+            mBuildModel.CurCityId = buildId;
             this.SendEvent(new BuildTriggerEnteredEvent(buildId));
         }
 

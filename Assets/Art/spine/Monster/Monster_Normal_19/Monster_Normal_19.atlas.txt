@@ -1,0 +1,33 @@
+Monster_Normal_19.png
+size:168,132
+pma:true
+Attack_Object
+bounds:2,59,60,69
+LEar
+bounds:126,3,17,17
+Lleg_1
+bounds:147,19,16,21
+Lleg_2
+bounds:126,44,12,12
+Mouth
+bounds:141,84,44,16
+rotate:90
+Mouth 2
+bounds:126,58,13,13
+REar
+bounds:141,63,20,19
+Rleg_1
+bounds:126,22,18,19
+rotate:90
+Rleg_2
+bounds:64,60,11,20
+rotate:90
+body
+bounds:64,73,75,55
+body die
+bounds:2,2,75,55
+mushroom head
+bounds:86,5,66,38
+rotate:90
+mushroom tail
+bounds:141,42,19,19

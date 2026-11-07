@@ -24,13 +24,6 @@ namespace Game
                 .Replace("\r\n", "\n")
                 .Replace("\r", "\n")
                 .Split('\n');
-
-            if (lines.Length < 3)
-            {
-                Debug.LogError($"[Config] {TableName} 行数不足");
-                return;
-            }
-
             // 表头（第 1 行）
             string[] headers = lines[0]
                 .Trim()

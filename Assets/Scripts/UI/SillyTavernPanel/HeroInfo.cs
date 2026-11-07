@@ -15,18 +15,19 @@ namespace Game
 			model.curHeroid.RegisterWithInitValue(e =>
 			{
 				var hero=model.GetHero(e);
+				var stat = hero.GetFinalStat();
 				nameTxt.text=hero.Name;
 				levelTxt.text=hero.Level.ToString();
-				Hp.value=(float)hero.CurHp/hero.MaxHp;
-				curHp.text = hero.CurHp + "/" + hero.MaxHp;
+				Hp.value=(float)hero.CurHp/stat.MaxHp;
+				curHp.text = hero.CurHp + "/" + stat.MaxHp;
 				Exp.value = (float)hero.Curexp / (hero.Level * 100);
 				curExp.text =hero.Curexp+"/" +(hero.Level * 100);
-				hp.text=hero.MaxHp.ToString();
-				atk.text=hero.Atk.ToString();
-				def.text=hero.Def.ToString();
-				crit.text=hero.Crit.ToString();
-				avd.text=hero.Avd.ToString();
-				step.text=hero.Step.ToString();
+				hp.text = stat.MaxHp.ToString();
+				atk.text = stat.Attack.ToString();
+				def.text = stat.Defense.ToString();
+				crit.text = stat.Crit.ToString();
+				avd.text = stat.Avd.ToString();
+				step.text = stat.Step.ToString();
 				txt.text=hero.Info.ToString();
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);

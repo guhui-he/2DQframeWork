@@ -23,29 +23,22 @@ namespace Game
 		{
 			
             RefreshUI();
-
-			// 3. 监听自动刷新（掉血、死亡等）
 			this.RegisterEvent<UnitDamagedEvent>(e =>
 			{
 				if (e.TargetId == mData.data.UnitId)
-					RefreshUI(); // 如果是自己掉血，刷新
+					RefreshUI(); 
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
-            this.RegisterEvent<UnitDieEvent>(e =>
-            {
-                if (e.UnitId == mData.data.UnitId)
-                    CloseSelf(); // 如果自己死了，关掉面板
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
         private void RefreshUI()
         {
-            Tools.SetSprite(icon, AssetPathDef.AtlasRole, mData.data.SourceInfo.Icon);
-			fill.fillAmount=(float)mData.data.Hp/mData.data.SourceInfo.MaxHp;
-			curTxt.text = (float)mData.data.Hp + "/" + mData.data.SourceInfo.MaxHp;
-			atk.text=mData.data.SourceInfo.Atk.ToString();
-			def.text= mData.data.SourceInfo.Def.ToString();
-            crit.text = mData.data.SourceInfo.Crit.ToString();
-            avd.text = mData.data.SourceInfo.Avd.ToString();
-
+			var role = mData.data.SourceInfo;
+            Tools.SetSprite(icon, AssetPathDef.AtlasRole,role.Icon);
+			fill.fillAmount = (float)mData.data.Hp / role.GetFinalStat().MaxHp;
+			curTxt.text = mData.data.Hp + "/" + role.GetFinalStat().MaxHp;
+			atk.text = role.GetFinalStat().Attack.ToString();
+			def.text=role.GetFinalStat().Defense.ToString();
+			crit.text=role.GetFinalStat().Crit.ToString();
+			avd.text=role.GetFinalStat().Avd.ToString();
         }
         protected override void OnShow()
 		{

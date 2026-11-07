@@ -1,4 +1,5 @@
 ﻿using QFramework;
+using UnityEngine;
 
 namespace Game
 {
@@ -7,6 +8,7 @@ namespace Game
         void StartGame();
         void CheckTurnEnd();
         void StartPlayerTurn();
+        void StartEnemyTurn();
         void CheckGameOver();
     }
 
@@ -19,54 +21,71 @@ namespace Game
         public void StartGame()
         {
             if (mModel.Phase.Value != BattlePhase.Ready) return;
-            foreach (var u in mModel.AllUnits)
-            {
-                u.HasActed = false;
-                u.HasMoved = false;
-                u.CurrentStep = u.SourceInfo.Step;
-            }
-
-            // 3. 状态切为玩家回合
-            mModel.Phase.Value = BattlePhase.PlayerTurn;
-            this.SendEvent(new PhaseChangedEvent { Phase = BattlePhase.PlayerTurn });
+            StartPlayerTurn();
         }
+
         public void CheckTurnEnd()
         {
             if (mModel.Phase.Value != BattlePhase.PlayerTurn) return;
             if (!AllPlayerActed()) return;
-
-            // 切到敌方回合
-            mModel.Phase.Value = BattlePhase.EnemyTurn;
-            this.SendEvent(new PhaseChangedEvent { Phase = BattlePhase.EnemyTurn });
-
-            // 重置敌方状态
-            foreach (var u in mModel.AllUnits)
-                if (!u.IsPlayer && u.IsAlive) { u.HasActed = false; u.HasMoved = false; u.CurrentStep = u.SourceInfo.Step; }
-
-            this.GetSystem<IAISystem>().StartEnemyTurn();
+            StartEnemyTurn();
         }
 
         public void StartPlayerTurn()
         {
             if (mModel.Phase.Value == BattlePhase.GameOver) return;
-
             mModel.Phase.Value = BattlePhase.PlayerTurn;
             this.SendEvent(new PhaseChangedEvent { Phase = BattlePhase.PlayerTurn });
 
-            // 重置玩家状态
+            // ★ 核心修复 1：重置 UI 交互状态，清空选中和路径高亮
+            mModel.SelectedUnit.Value = null;
+            mModel.Action.Value = ActionState.WaitInput;
+            this.GetSystem<IPathPreviewSystem>().ClearAllGrids();
+
+            var queue = this.GetSystem<IActionQueueSystem>();
+            queue.Clear();
+
+            // 遍历所有玩家，依次排队“回合开始”
             foreach (var u in mModel.AllUnits)
-                if (u.IsPlayer && u.IsAlive) { u.HasActed = false; u.HasMoved = false; u.CurrentStep = u.SourceInfo.Step; }
+            {
+                if (u.IsPlayer && u.IsAlive)
+                {
+                    queue.Enqueue(new UnitTurnStartAction(u));
+                }
+            }
+        }
+
+        public void StartEnemyTurn()
+        {
+            if (mModel.Phase.Value == BattlePhase.GameOver) return;
+            mModel.Phase.Value = BattlePhase.EnemyTurn;
+            this.SendEvent(new PhaseChangedEvent { Phase = BattlePhase.EnemyTurn });
+
+            // ★ 同理，敌人回合开始时也要重置状态，防止上一回合的残留
+            mModel.SelectedUnit.Value = null;
+            mModel.Action.Value = ActionState.WaitInput;
+            this.GetSystem<IPathPreviewSystem>().ClearAllGrids();
+
+            var queue = this.GetSystem<IActionQueueSystem>();
+            queue.Clear();
+
+            // 遍历所有敌人，依次排队“回合开始”
+            foreach (var u in mModel.AllUnits)
+            {
+                if (!u.IsPlayer && u.IsAlive)
+                {
+                    queue.Enqueue(new UnitTurnStartAction(u));
+                }
+            }
+
+            // 等所有敌人的回合开始表现播完，再启动 AI
+            queue.Enqueue(new ActionWrapper(() => this.GetSystem<IAISystem>().StartEnemyTurn()));
         }
 
         public void CheckGameOver()
         {
-            bool anyPlayer = false, anyEnemy = false;
-            foreach (var u in mModel.AllUnits)
-            {
-                if (!u.IsAlive) continue;
-                if (u.IsPlayer) anyPlayer = true;
-                else anyEnemy = true;
-            }
+            bool anyPlayer = mModel.HasAliveUnit(true);
+            bool anyEnemy = mModel.HasAliveUnit(false);
 
             if (!anyPlayer || !anyEnemy)
             {
@@ -78,7 +97,9 @@ namespace Game
         private bool AllPlayerActed()
         {
             foreach (var u in mModel.AllUnits)
+            {
                 if (u.IsPlayer && u.IsAlive && !u.HasActed) return false;
+            }
             return true;
         }
     }

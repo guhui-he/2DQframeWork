@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using QFramework;
 using UnityEngine;
 
@@ -10,122 +11,191 @@ namespace Game
     {
         private IConfigModel mConfigModel;
         private IResModel mResModel;
+
         protected override void OnInit()
         {
             mConfigModel = this.GetModel<IConfigModel>();
-            mResModel=this.GetModel<IResModel>();
-
-            InitSpawnEnemyData();
+            mResModel = this.GetModel<IResModel>();
+            InitRegionConfig();
             InitSprite();
+            InitUIPanel();
+            InitGamePlayEvent();
+            InitDialogue();
             InitBuildData();
-            InitItemData();  
+            InitFactionRelationData();
+            InitPartyData();
+            InitEffectData();
+            InitVfxData();
+            InitBuffData();
+            InitSkillData();
+            InitItemData();
             InitRoleData();
         }
-        private void InitSpawnEnemyData()
+        private void InitRegionConfig()
         {
-            var model = this.GetModel<ISpawnEnemyModel>();
-            var table = mConfigModel.GetTable(ConfigConstants.SpawnEnemy);
+            var model=this.GetModel<IRegionConfigModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.Region);
             foreach (var row in table.GetAllRows())
             {
-                if (!int.TryParse(row.GetValueOrDefault("Id"), out int id)) continue;
-
-                var data = new SpawnEnemyData { Id = id };
-                data.Name = row.GetValueOrDefault("Name", "");
-                
-                data.Des = row.GetValueOrDefault("Des", "");
-                data.SceneName = row.GetValueOrDefault("SceneName", "");
-                data.EnemyId=ParseInt(row,"enemyId");
-                model.AddSpawnEnemy(data);
+                model.AddRegion(ConfigParsers.ParseRegion(row));
             }
         }
         private void InitSprite()
         {
             mResModel.AddAtlasPath(AssetPathDef.AtlasArmor);
             mResModel.AddAtlasPath(AssetPathDef.AtlasHelmet);
-            mResModel.AddAtlasPath (AssetPathDef.AtlasBoot);
+            mResModel.AddAtlasPath(AssetPathDef.AtlasBoot);
             mResModel.AddAtlasPath(AssetPathDef.AtlasShield);
             mResModel.AddAtlasPath(AssetPathDef.AtlasWeapon);
             mResModel.AddAtlasPath(AssetPathDef.AtlasSupplies);
             mResModel.AddAtlasPath(AssetPathDef.AtlasRole);
         }
-        private void InitBuildData()
+        private void InitUIPanel()
         {
-            var buildModel = this.GetModel<IBuildModel>();
-            var table = mConfigModel.GetTable(ConfigConstants.Town);
-            if (table == null) { Debug.LogError("Town 表缺失"); return; }
+            var uipanelModel = this.GetModel<IUIPanelConfigModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.UIPanel);
             foreach (var row in table.GetAllRows())
             {
-                if (!int.TryParse(row.GetValueOrDefault("Id"), out int id)) continue;
+                uipanelModel.AddConfig(ConfigParsers.ParseUIPanel(row));
+            }
+        }
+        private void InitGamePlayEvent()
+        {
+            var eventModel=this.GetModel<IGamePlayEventModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.Event);
+            if (table == null) { Debug.LogError("City 表缺失"); return; }
 
-                var data = new BuildData { Id = id };
-                data.Name = row.GetValueOrDefault("Name", "");
-                data.Des = row.GetValueOrDefault("Des", "");
-                buildModel.AddBuildData(data);
+            foreach (var row in table.GetAllRows())
+            {
+                if (!int.TryParse(row.GetValueOrDefault("Id"), out _)) continue;
+                eventModel.AddConfig(ConfigParsers.ParseEvent(row));
+            }
+        }
+        private void InitDialogue()
+        {
+            var dialogueModel = this.GetModel<IDialogueConfigModel>();
+            var table=mConfigModel.GetTable(ConfigConstants.Dialogue);
+            foreach (var row in table.GetAllRows())
+            {
+                dialogueModel.AddConfig(ConfigParsers.ParseDialogue(row));
+            }
+        }
+        private void InitBuildData()
+        {
+            var buildModel = this.GetModel<ICityConfigModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.City);
+            Debug.Log("city");
+            if (table == null) { Debug.LogError("City 表缺失"); return; }
+
+            foreach (var row in table.GetAllRows())
+            {
+                if (!int.TryParse(row.GetValueOrDefault("Id"), out _)) continue;
+                buildModel.AddCityConfig(ConfigParsers.ParseBuild(row));
+            }
+        }
+        private void InitFactionRelationData()
+        {
+            var relationConfigModel = this.GetModel<IRelationConfigModel>();
+            var relationModel = this.GetModel<IRelationModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.FactionRelation);
+            foreach (var row in table.GetAllRows())
+            {
+                relationConfigModel.AddConfig(ConfigParsers.ParseRelation(row));
+            }
+            relationModel.ResetToDefault(relationConfigModel);
+        }
+        private void InitPartyData()
+        {
+            var partyModel=this.GetModel<IPartyConfigModel>();
+            var table=mConfigModel.GetTable(ConfigConstants.Party);
+            foreach(var row in table.GetAllRows())
+            {
+                partyModel.AddConfig(ConfigParsers.ParseParty(row));
             }
         }
         private void InitRoleData()
         {
             var roleModel = this.GetModel<IRoleConfigModel>();
+            var table=mConfigModel.GetTable(ConfigConstants.Role);
+           foreach (var row in table.GetAllRows())
+             {
+             if (!int.TryParse(row.GetValueOrDefault("Id"), out _)) continue;
+             roleModel.AddRole(ConfigParsers.ParseRole(row));
+             }
+            
+        }
 
-            foreach (RoleType type in System.Enum.GetValues(typeof(RoleType)))
+        private void InitEffectData()
+        {
+            var effectModel = this.GetModel<IEffectConfigModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.Effect);
+            if (table == null) { Debug.LogError("Effect 表缺失"); return; }
+
+            foreach (var row in table.GetAllRows())
             {
-                string tableKey = type == RoleType.Hero ? ConfigConstants.Hero : ConfigConstants.Enemy;
-                var table = mConfigModel.GetTable(tableKey);
-                if (table == null) { Debug.LogWarning($"[InitDataSystem] {type} 表缺失"); continue; }
-
-                foreach (var row in table.GetAllRows())
-                {
-                    if (!int.TryParse(row.GetValueOrDefault("Id"), out int id)) continue;
-                    roleModel.AddRole(type, new RoleConfigData
-                    {
-                        Id = id,
-                        Name = row.GetValueOrDefault("Name", ""),
-                        Icon = row.GetValueOrDefault("Icon", ""),
-                        Model = row.GetValueOrDefault("Model", ""),
-                        Info = row.GetValueOrDefault("Info", ""),
-
-                        // ==================== 基础属性范围 ====================
-                        HpMin = ParseInt(row, "HpMin"),
-                        HpMax = ParseInt(row, "HpMax"),
-                        AtkMin = ParseInt(row, "AtkMin"),
-                        AtkMax = ParseInt(row, "AtkMax"),
-                        DefMin = ParseInt(row, "DefMin"),
-                        DefMax = ParseInt(row, "DefMax"),
-                        StepMin = ParseInt(row, "StepMin"),
-                        StepMax = ParseInt(row, "StepMax"),
-                        CritMin = ParseInt(row, "CritMin"),
-                        CritMax = ParseInt(row, "CritMax"),
-                        AvdMin = ParseInt(row, "AvdMin"),
-                        AvdMax = ParseInt(row, "AvdMax"),
-                    });
-                }
+                effectModel.AddEffect(ConfigParsers.ParseEffect(row));
             }
         }
+
+        private void InitBuffData()
+        {
+            var model = this.GetModel<IBuffModel>();
+            var table=mConfigModel.GetTable(ConfigConstants.Buff);
+            foreach( var row in table.GetAllRows())
+            {
+                model.AddBuffConfig(ConfigParsers.ParseBuff(row));
+            }
+        }
+        private void InitVfxData()
+        {
+            var model = this.GetModel<IVfxModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.Vfx);
+            if (table == null) { Debug.LogError("Vfx 表缺失"); return; }
+
+            foreach (var row in table.GetAllRows())
+            {
+                model.AddVfxConfig(ConfigParsers.ParseVfx(row));
+            }
+        }
+
+        private void InitSkillData()
+        {
+            var skillModel = this.GetModel<ISkillModel>();
+            var effectModel = this.GetModel<IEffectConfigModel>();
+            var table = mConfigModel.GetTable(ConfigConstants.Skill);
+            if (table == null) { Debug.LogError("Skill 表缺失"); return; }
+
+            foreach (var row in table.GetAllRows())
+            {
+                // 借用扩展方法校验 Id，避免解析崩溃
+                if (!int.TryParse(row.GetValueOrDefault("Id"), out _)) continue;
+
+                var skill = ConfigParsers.ParseSkill(row, effectModel);
+                skillModel.AddSkill(new SkillInfo(skill));
+            }
+        }
+
         #region Item
         private void InitItemData()
         {
             var itemModel = this.GetModel<IItemConfigModel>();
 
-            // 遍历枚举里的每一个类型
-            foreach (ItemType type in System.Enum.GetValues(typeof(ItemType)))
+            foreach (ItemType type in Enum.GetValues(typeof(ItemType)))
             {
                 string tableKey = GetTableKey(type);
                 if (string.IsNullOrEmpty(tableKey)) continue;
 
                 var table = mConfigModel.GetTable(tableKey);
-                int count = 0;
+                if (table == null) continue;
+
                 foreach (var row in table.GetAllRows())
                 {
-                    var data = ParseItem(type, row);
-                    if (data == null) continue;
-
-                    itemModel.AddItem(type, data);
-                    count++;
+                    if (!int.TryParse(row.GetValueOrDefault("Id"), out _)) continue;
+                    itemModel.AddItem(type, ConfigParsers.ParseItem(row, type));
                 }
             }
         }
 
-        /// <summary>枚举 → 配置表 key</summary>
         private string GetTableKey(ItemType type)
         {
             switch (type)
@@ -136,33 +206,9 @@ namespace Game
                 case ItemType.Armor: return ConfigConstants.Armor;
                 case ItemType.Boot: return ConfigConstants.Boot;
                 case ItemType.Supplie: return ConfigConstants.Supplie;
+                default: return null;
             }
-            return null;
-        }
-
-        private ItemConfigData ParseItem(ItemType type, Dictionary<string, string> row)
-        {
-            if (!int.TryParse(row.GetValueOrDefault("Id"), out int id))
-            {
-                Debug.LogWarning($"[InitDataSystem] {type} 有非法 Id 的行，跳过");
-                return null;
-            }
-
-            return new ItemConfigData
-            {
-                Id = id,
-                Type = type,
-                Name = row.GetValueOrDefault("Name", ""),
-                Icon = row.GetValueOrDefault("Icon", ""),
-                Price = ParseInt(row, "Price"),
-                Slot = row.GetValueOrDefault("Slot", ""),
-                Level = ParseInt(row, "Level"),
-            };
         }
         #endregion
-
-
-        private int ParseInt(Dictionary<string, string> row, string key)
-            => int.TryParse(row.GetValueOrDefault(key), out var v) ? v : 0;
     }
 }

@@ -14,18 +14,15 @@ namespace Game
         {
             ActionKit.DelayFrame(1, () => {
                 var pos = new GridPos(SpawnRow, SpawnCol);
-                var fakeRoleInfo = this.GetSystem<IRoleFactorySystem>().CreateRole(RoleType.Enemy);
+                var fakeRoleInfo = this.GetSystem<IRoleFactorySystem>().CreateRole();
 
                 this.SendCommand(new SpawnUnitCommand(fakeRoleInfo, pos, false));
+            }).StartGlobal();
+            ActionKit.DelayFrame(1, () => {
+                var pos = new GridPos(SpawnRow+1, SpawnCol);
+                var fakeRoleInfo = this.GetSystem<IRoleFactorySystem>().CreateRole();
 
-                var unitData = this.GetModel<IBattleModel>().GetUnitAt(pos);
-                if (unitData == null) return;
-
-                var obj = Instantiate(EnemyPrefab);
-                if (BlockViewRegistry.TryGetWorldPosition(pos, out var wp))
-                    obj.transform.position = new Vector3(wp.x, wp.y, -1);
-
-                obj.GetComponent<BattleUnitView>().UnitId = unitData.UnitId;
+                this.SendCommand(new SpawnUnitCommand(fakeRoleInfo, pos, false));
             }).StartGlobal();
         }
     }

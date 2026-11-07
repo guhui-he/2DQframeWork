@@ -1,0 +1,23 @@
+Monster_Normal_12.png
+size:144,140
+pma:true
+Attack_Object
+bounds:57,16,46,37
+rotate:90
+acc
+bounds:96,12,21,29
+die face
+bounds:2,64,74,62
+rotate:90
+face
+bounds:66,76,74,62
+foot_L
+bounds:119,2,17,20
+rotate:90
+foot_R
+bounds:119,21,20,21
+rotate:90
+horn1
+bounds:2,3,53,59
+horn2
+bounds:96,43,42,31

@@ -1,0 +1,25 @@
+Monster_Normal_7.png
+size:236,60
+pma:true
+LF
+bounds:199,3,16,19
+LH
+bounds:138,2,13,25
+rotate:90
+RF
+bounds:165,4,11,7
+rotate:90
+RH
+bounds:174,5,10,23
+rotate:90
+Weapon
+bounds:138,17,37,40
+body
+bounds:177,24,33,29
+rotate:90
+die head
+bounds:2,3,66,54
+head
+bounds:70,3,66,54
+tail
+bounds:208,30,26,27

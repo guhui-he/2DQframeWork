@@ -1,4 +1,6 @@
-﻿using QFramework;
+﻿
+using QFramework;
+using UnityEngine;
 
 namespace Game
 {
@@ -11,20 +13,22 @@ namespace Game
             this.GetSystem<IBattleTurnSystem>().StartGame();
         }
     }
-    // ==========================================
-    // 1. 选中单位（玩家点击自己的英雄）
-    // ==========================================
-    public class SelectUnitCommand : AbstractCommand
+    public class BattleClickCommand : AbstractCommand
     {
-        private readonly BattleUnitData mUnit;
-        public SelectUnitCommand(BattleUnitData unit) => mUnit = unit;
+        private readonly GridPos mPos;
+        private readonly int mTargetUnitId; // 如果点到了单位，传 ID；点到空地传 -1
+
+        public BattleClickCommand(GridPos pos, int targetUnitId)
+        {
+            mPos = pos;
+            mTargetUnitId = targetUnitId;
+        }
 
         protected override void OnExecute()
         {
-            this.GetSystem<IBattleSystem>().SelectUnit(mUnit);
+            this.GetSystem<IBattleInputSystem>().HandleClick(mPos, mTargetUnitId);
         }
     }
-
     // ==========================================
     // 2. 移动指令（玩家点击地面）
     // ==========================================
@@ -44,9 +48,11 @@ namespace Game
     // ==========================================
     public class EnterAttackCommand : AbstractCommand
     {
+        int id;
+        public EnterAttackCommand(int id) { this.id = id; }
         protected override void OnExecute()
         {
-            this.GetSystem<IBattleSystem>().EnterAttackState();
+            this.GetSystem<IBattleSystem>().EnterAttackState(id);
         }
     }
 
@@ -56,11 +62,20 @@ namespace Game
     public class AttackCommand : AbstractCommand
     {
         private readonly BattleUnitData mTarget;
-        public AttackCommand(BattleUnitData target) => mTarget = target;
-
+        private readonly GridPos pos;
+        public AttackCommand(BattleUnitData target)
+        {
+            mTarget = target;
+            pos=target.Pos;
+        }
+        public AttackCommand(GridPos pos)
+        {
+            this.pos = pos;
+            mTarget=null;
+        }
         protected override void OnExecute()
         {
-            this.GetSystem<IBattleSystem>().ExecuteAttack(mTarget);
+            this.GetSystem<IBattleSystem>().ExecuteAttack(mTarget,pos);
         }
     }
 
@@ -87,7 +102,7 @@ namespace Game
     }
 
     // ==========================================
-    // 7. 生成战斗单位（拖拽入场时）
+    // 7. 生成战斗单位
     // ==========================================
     public class SpawnUnitCommand : AbstractCommand
     {
@@ -105,8 +120,17 @@ namespace Game
         protected override void OnExecute()
         {
             var model = this.GetModel<IBattleModel>();
-            var newUnit = new BattleUnitData(model.AllUnits.Count + 1, mInfo, mIsPlayer, mPos);
+            var skillModel=this.GetModel<ISkillModel>();
+            var newUnit = new BattleUnitData(mInfo.Id, mInfo, mIsPlayer, mPos);
+            newUnit.skills = skillModel.GetSkillInfos(mInfo.mSkillIds);
             model.AddUnit(newUnit);
+            this.SendEvent(new UnitSpawnedEvent
+            {
+                UnitId = newUnit.UnitId,
+                ModelPath = mInfo.Model,
+                AniPath=mInfo.Ani,
+                Pos = mPos
+            });
         }
     }
 

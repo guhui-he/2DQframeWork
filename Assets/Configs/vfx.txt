@@ -1,0 +1,9 @@
+Id,Name,Path,TileX,TileY,OffsetX,OffsetY,Speed,Timer,PrefabPath
+Id,特效名称,资源图片路径,横向帧数,纵向帧数,偏移X,偏移Y,飞行速度,持续时间,资源路径
+1001,施法特效,shifa,4,1,0,-0.2,0,0.5,PointVfx
+1002,普通火球,fireball,4,1,0,0,10,1,ProjectileVfx
+1003,光剑打击,guanjian,3,1,0,0,10,1,ProjectileVfx
+1004,爆炸特效,Boom,5,1,0,0,0,0.5,AoeVfx
+1005,治疗光芒,heal_glow,4,1,0,0,0,0.5,PointVfx
+1006,光柱,guangzhu,3,3,0,0,0,0.8,LineVfx
+1007,普通命中,Boom,5,1,0,0,0,0.8,PointVfx  

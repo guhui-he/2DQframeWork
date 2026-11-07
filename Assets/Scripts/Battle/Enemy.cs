@@ -6,24 +6,14 @@ namespace Game
 {
 	public partial class Enemy : BattleUnitView
 	{
-        //protected override void OnAttacked()
-        //{
-        //    body.Play("Attack");
-        //}
-        protected override void OnDamaged(int damage)
-        {
-            body.color = Color.red;
-
-        }
 
         protected override void OnDamagedCompleted()
         {
-            body.color = Color.white;
         }
 
         protected override void OnDie()
         {
-            ani.Play("die");
+            ani.AnimationState.SetAnimation(0, "Die", true);
             Destroy(gameObject, 1.0f);
         }
 

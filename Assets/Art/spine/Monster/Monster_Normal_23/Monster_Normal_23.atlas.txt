@@ -1,0 +1,21 @@
+Monster_Normal_23.png
+size:212,196
+pma:true
+arm_L
+bounds:122,2,33,38
+arm_R
+bounds:122,42,46,32
+attack
+bounds:170,49,40,25
+attack_2
+bounds:2,10,17,12
+body
+bounds:2,24,118,84
+body attack
+bounds:2,110,118,84
+body_die
+bounds:122,76,118,83
+offsets:0,1,118,84
+rotate:90
+head
+bounds:157,12,28,28

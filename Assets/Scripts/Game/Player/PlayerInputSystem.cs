@@ -9,16 +9,28 @@ namespace Game
     public class PlayerInputSystem : AbstractSystem, IPlayerInputSystem
     {
         private IPlayerModel mPlayerModel;
+        private ITimeModel mTimeModel;
         private Vector2? mLastDir = null;
 
         protected override void OnInit()
         {
             mPlayerModel = this.GetModel<IPlayerModel>();
+            mTimeModel = this.GetModel<ITimeModel>();
             ActionKit.Repeat().Callback(ReadInput).StartGlobal();
         }
 
         private void ReadInput()
         {
+            if (mTimeModel.IsPaused.Value)
+            {
+                if (mLastDir != Vector2.zero)
+                {
+                    mLastDir = Vector2.zero;
+                    mPlayerModel.Direction.Value = Vector2.zero;
+                    mPlayerModel.IsMoving.Value = false;
+                }
+                return;
+            }
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
 

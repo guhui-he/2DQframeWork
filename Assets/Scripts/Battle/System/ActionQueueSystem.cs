@@ -63,8 +63,6 @@ namespace Game
                         mCurrentAction.OnStart();
                     }
                 }
-
-                // ★ 如果 OnStart 内部引发了 Clear() 或其他操作，这里判空
                 if (mCurrentAction == null) return;
 
                 if (mCurrentAction.OnUpdate(Time.deltaTime))

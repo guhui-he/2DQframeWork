@@ -19,8 +19,6 @@ namespace Game
                 mCameraModel.TargetPosition.Value =
                     new Vector3(e.Position.x, e.Position.y, mCameraModel.TargetPosition.Value.z);
             });
-
-            // 每帧平滑跟随
             ActionKit.Repeat()
                 .Callback(Tick)
                 .StartGlobal();

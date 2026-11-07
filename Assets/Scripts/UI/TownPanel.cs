@@ -5,16 +5,19 @@ namespace Game
 {
 	public class TownPanelData : UIPanelData
 	{
-		public int id;
+
 	}
 	public partial class TownPanel : TimePausingPanel, ICanSendEvent
 	{
-		private IBuildModel mBuildModel;
+		private ICityConfigModel mBuildModel;
+		IPlayerModel playerModel;
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as TownPanelData ?? new TownPanelData();
-			mBuildModel=this.GetModel<IBuildModel>();
-			var buildModel = mBuildModel.GetBuildData(mData.id);
+			mBuildModel=this.GetModel<ICityConfigModel>();
+			playerModel = this.GetModel<IPlayerModel>();
+
+			var buildModel = mBuildModel.GetCityConfig(playerModel.CurrentCityId.Value);
 
 			nameTxt.text=buildModel.Name;
 			BtnBack.onClick.AddListener(() =>
@@ -23,7 +26,7 @@ namespace Game
 			});
 			BtnStore.onClick.AddListener(() =>
 			{
-				this.SendEvent(new StoreEnterEvent(mData.id));
+				this.SendEvent(new StoreEnterEvent());
 			});
 			BtnSmithy.onClick.AddListener(() => { });
 			BtnSillyTavern.onClick.AddListener(() =>

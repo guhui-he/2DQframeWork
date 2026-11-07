@@ -8,13 +8,11 @@ namespace Game
     {
         public IArchitecture GetArchitecture() => GameApp.Interface;
         private IPlayerModel mPlayerModel;
-        private IPlayerMoveSystem mMoveSystem;
 
         void Start()
         {
             mPlayerModel = this.GetModel<IPlayerModel>();
-            mMoveSystem = this.GetSystem<IPlayerMoveSystem>();
-
+            var partyModel = this.GetModel<IPartyModel>();
             if (mPlayerModel.HasLoadedPosition)
             {
                 ApplyTeleport(mPlayerModel.Position.Value);
@@ -51,8 +49,8 @@ namespace Game
         {
             var target = new Vector3(pos.x, pos.y, transform.position.z);
             transform.position = target;
-            SelfRigidbody2D.position = pos;       // 2D 物理位置必须单独同步
-            SelfRigidbody2D.velocity = Vector2.zero;  // 防止物理惯性把角色又推走
+            SelfRigidbody2D.position = pos;       
+            SelfRigidbody2D.velocity = Vector2.zero; 
         }
         private Vector2 mLastReported;
         void FixedUpdate()

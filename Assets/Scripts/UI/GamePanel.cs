@@ -7,21 +7,27 @@ namespace Game
 	public class GamePanelData : UIPanelData
 	{
 	}
-	public partial class GamePanel : UIPanel,IController
+	public partial class GamePanel : UIPanel,IController,ICanSendEvent
 	{
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as GamePanelData ?? new GamePanelData();
-
+			hero.onClick.AddListener(() =>
+			{
+				this.SendEvent(new OpenPanelEvent { PanelId = UIPanelId.Skill });
+			});
 			bag.onClick.AddListener(() =>
 			{
-				UIKit.OpenPanel<BagPanel>();
-			});
+                this.SendEvent(new OpenPanelEvent
+                {
+                    PanelId =UIPanelId.Bag, 
+                });
+            });
 			save.onClick.AddListener(() =>
 			{
 				this.GetSystem<ISaveSystem>().SaveGame();
 			});
-			quest.onClick.AddListener(() =>
+			close.onClick.AddListener(() =>
 			{
 				CloseSelf();
                 this.GetSystem<ILoadingSystem>().LoadSceneAsync("GameStart");

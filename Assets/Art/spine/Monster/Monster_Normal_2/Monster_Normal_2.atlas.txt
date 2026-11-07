@@ -1,0 +1,17 @@
+Monster_Normal_2.png
+size:88,128
+pma:true
+Body_0
+bounds:0,22,87,51
+Body_1
+bounds:0,75,87,51
+Crown
+bounds:0,0,28,24
+L_Hand
+bounds:43,9,10,11
+L_Leg
+bounds:55,10,10,10
+R_Hand
+bounds:30,9,11,11
+R_Leg
+bounds:67,11,9,9

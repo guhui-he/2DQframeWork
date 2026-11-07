@@ -274,21 +274,18 @@ UIKit.GetPanel(""UIHomePanel"");
             return retPanel;
         }
 
-        public static UIPanel OpenPanel(string panelName, UILevel level = UILevel.Common, string assetBundleName = null)
+       public static UIPanel OpenPanel(string panelName, UILevel level = UILevel.Common, string assetBundleName = null, IUIData uiData = null)
         {
             var panelSearchKeys = PanelSearchKeys.Allocate();
-
             panelSearchKeys.Level = level;
             panelSearchKeys.AssetBundleName = assetBundleName;
             panelSearchKeys.GameObjName = panelName;
+            panelSearchKeys.UIData = uiData; // ★ 补上这一行！
 
             var retPanel = UIManager.Instance.OpenUI(panelSearchKeys);
-
             panelSearchKeys.Recycle2Cache();
-
             return retPanel as UIPanel;
         }
-
         public static void ClosePanel(string panelName)
         {
             var panelSearchKeys = PanelSearchKeys.Allocate();

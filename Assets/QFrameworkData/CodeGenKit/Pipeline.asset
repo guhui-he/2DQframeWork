@@ -15,12 +15,18 @@ MonoBehaviour:
   CurrentTask:
     ShowLog: 0
     Status: 1
-    GameObject: {fileID: 5426627617009202037, guid: 947cc5e053e23f1438f731d11084fea4, type: 3}
+    GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos: []
+    BindInfos:
+    - TypeName: UnityEngine.SpriteRenderer
+      PathToRoot: body
+      MemberName: body
+    - TypeName: UnityEngine.SpriteRenderer
+      PathToRoot: tip
+      MemberName: tip
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: HitNum
+    ClassName: gbl
     Namespace: Game
     MainCode: 
     DesignerCode: 

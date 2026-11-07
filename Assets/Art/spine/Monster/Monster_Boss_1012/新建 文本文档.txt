@@ -1,0 +1,15 @@
+@echo off
+setlocal enabledelayedexpansion
+
+REM 设置 Spine 可执行文件路径
+set "SPINE_EXE="C:\Users\Lenovo\Desktop\SpinePro.exe""
+REM 设置导出格式
+set "EXPORT_FORMAT=json+pack"
+
+echo 开始批量导出...
+for %%f in (*.spine) do (
+    echo 正在导出: %%~nf
+    "%SPINE_EXE%" -i "%%f" -o "output\%%~nf" -e %EXPORT_FORMAT%
+)
+echo 导出完成！
+pause

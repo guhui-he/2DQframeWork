@@ -1,52 +1,41 @@
 ﻿using QFramework;
 
+
 namespace Game
 {
+    public enum MoveStyle { GridPath, Dash, Jump }
     public class MoveAction : IBattleAction
     {
         private readonly BattleUnitData mUnit;
         private readonly GridPos mTarget;
+        private readonly MoveStyle mStyle;
+        private readonly bool mIsSkillMove;
         private bool mIsDone = false;
         private IUnRegister mUnregister;
 
-        public MoveAction(BattleUnitData unit, GridPos target)
+        public MoveAction(BattleUnitData unit, GridPos target, MoveStyle style = MoveStyle.GridPath, bool isSkillMove = false)
         {
-            mUnit = unit;
-            mTarget = target;
+            mUnit = unit; mTarget = target; mStyle = style; mIsSkillMove = isSkillMove;
         }
 
         public void OnStart()
         {
             var battleSystem = GameApp.Interface.GetSystem<IBattleSystem>();
 
-            // 1. 纯逻辑计算、校验、改数据
-            if (!battleSystem.CalculateAndApplyMove(mUnit, mTarget, out bool needWaitAnimation))
+            // 瞬间修改坐标并发事件
+            if (!battleSystem.CalculateAndApplyMove(mUnit, mTarget, mStyle, mIsSkillMove, out bool needWaitAnimation))
             {
-                mIsDone = true; // 校验失败（比如被挡了），直接结束
-                return;
+                mIsDone = true; return;
             }
-            if (!needWaitAnimation)
-            {
-                mIsDone = true; // 原地不动，直接结束 Action
-                return;
-            }
-            // 2. 订阅 View 动画播放完成事件
+            if (!needWaitAnimation) { mIsDone = true; return; }
+
             mUnregister = GameApp.Interface.RegisterEvent<UnitMoveCompletedEvent>(e =>
             {
                 if (e.UnitId == mUnit.UnitId) mIsDone = true;
             });
         }
 
-        public bool OnUpdate(float dt)
-        {
-            if (mIsDone)
-            {
-                mUnregister?.UnRegister();
-                return true;
-            }
-            return false;
-        }
-
+        public bool OnUpdate(float dt) { if (mIsDone) { mUnregister?.UnRegister(); return true; } return false; }
         public void OnCancel() => mUnregister?.UnRegister();
     }
 }

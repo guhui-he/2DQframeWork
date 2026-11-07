@@ -16,6 +16,7 @@ namespace Game
 		[SerializeField] public UnityEngine.UI.Text curHp;
 		[SerializeField] public UnityEngine.UI.Slider Exp;
 		[SerializeField] public UnityEngine.UI.Text curExp;
+		[SerializeField] public UnityEngine.UI.Button Up;
 
 		public void Clear()
 		{
@@ -25,6 +26,7 @@ namespace Game
 			curHp = null;
 			Exp = null;
 			curExp = null;
+			Up = null;
 		}
 
 		public override string ComponentName

@@ -1,0 +1,17 @@
+Monster_Normal_30.png
+size:240,228
+pma:true
+body
+bounds:0,62,129,82
+body_die
+bounds:0,146,129,82
+fin_L
+bounds:131,64,106,85
+fin_R
+bounds:131,151,77,76
+rotate:90
+tail_B
+bounds:131,7,100,55
+tail_F
+bounds:0,0,60,89
+rotate:90

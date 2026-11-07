@@ -11,22 +11,19 @@ namespace Game
 	public partial class BattleStartPanel : UIPanel,IController
 	{
         private IHeroModel mHeroModel;
-        private IBattleModel model;
+
         protected override void OnInit(IUIData uiData = null)
         {
             mData = uiData as BattleStartPanelData ?? new BattleStartPanelData();
             mHeroModel = this.GetModel<IHeroModel>();
-            model = this.GetModel<IBattleModel>();
             startBtn.onClick.AddListener(() =>
             {
-                this.SendCommand(new StartGameCommand());
-                bottom.gameObject.SetActive(false);
+                this.SendCommand(new StartGameCommand()); 
+                CloseSelf();
+                UIKit.OpenPanel<BattlePanel>();
             });
             Setting.onClick.AddListener(() => { });
-            model.TurnCount.RegisterWithInitValue(e =>
-            {
-                TurnTxt.text = $"µÚ{e}»ØºÏ";
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+           
             this.RegisterEvent<BattleBeginDragEvent>(e =>
             {
                 DragHeroPanel.gameObject.SetActive(true);
@@ -38,19 +35,7 @@ namespace Game
                 DragHeroPanel.gameObject.SetActive(false);
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
-            this.RegisterEvent<UnitDamagedEvent>(e =>
-            {
-                var unit = model.AllUnits.FirstOrDefault(u => u.UnitId == e.TargetId);
-                if (unit == null) return;
-                if (BlockViewRegistry.TryGetWorldPosition(unit.Pos, out var wp))
-                {
-                    HitNum.text = e.Damage.ToString();
-                    var obj = Instantiate(HitNum, this.transform);
-                    obj.gameObject.SetActive(true);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(wp) + Vector3.up * 80;
-                    obj.transform.position = screenPos;
-                }
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+            
         }
 
         protected override void OnOpen(IUIData uiData = null)

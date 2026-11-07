@@ -18,7 +18,7 @@ namespace Game
             {
                 foreach (var affix in item.Affixes)
                 {
-                    save.Affixes.Add(new ItemAffixSaveData
+                    save.Affixes.Add(new AffixSaveData
                     {
                         Stat = (int)affix.Stat,
                         Value = affix.Value
@@ -41,7 +41,7 @@ namespace Game
             if (save.Affixes != null)
             {
                 foreach (var a in save.Affixes)
-                    item.Affixes.Add(new ItemAffix((AffixStatType)a.Stat, a.Value));
+                    item.Affixes.Add(new StatAffix((AffixStatType)a.Stat, a.Value));
             }
             return item;
         }

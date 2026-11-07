@@ -1,0 +1,21 @@
+Monster_Normal_16.png
+size:192,108
+pma:true
+Bhead
+bounds:159,28,24,24
+LHand
+bounds:148,54,39,49
+LLeg
+bounds:106,18,26,30
+RHand
+bounds:70,2,34,46
+RLeg
+bounds:134,17,23,31
+body
+bounds:2,2,53,66
+rotate:90
+die body
+bounds:80,50,53,66
+rotate:90
+head
+bounds:2,57,76,46

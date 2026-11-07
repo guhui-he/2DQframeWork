@@ -1,0 +1,25 @@
+Monster_Normal_33.png
+size:192,228
+pma:true
+R_ arm
+bounds:152,123,42,39
+rotate:90
+R_fire_arm
+bounds:124,25,48,48
+Sword
+bounds:0,177,167,49
+arm
+bounds:0,48,56,51
+arm_2
+bounds:91,73,59,102
+body
+bounds:0,99,76,103
+rotate:90
+fire_arm
+bounds:30,0,46,47
+rotate:90
+fire_arm2
+bounds:143,75,46,46
+offsets:1,1,48,48
+head
+bounds:58,18,65,69

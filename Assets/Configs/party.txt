@@ -1,0 +1,9 @@
+Id,Name,PartyType,MaxMember,MoveSpeed,MinRarity,MaxRarity,IconPath,Remark
+配置ID,名称,队伍类型(Enemy/Caravan),人数上限,移动速度,最小稀有度,最大稀有度,图标路径,备注
+1001,普通劫匪,Enemy,3,2.0,1,2,Monster_Boss_1004_SkeletonData,低级野怪队伍
+1002,精英哥布林,Enemy,5,2.5,2,4,Monster_Boss_1006_SkeletonData,高级野怪队伍
+2001,皇家商队,Caravan,8,1.2,3,5,sanim_115131_SkeletonData,重装商队全带精锐
+2002,平民商队,Caravan,4,1.8,1,2,sanim_125151_SkeletonData,普通商队只有低级兵
+2003,皇家护卫,Caravan,4,1.2,4,5,sanim_125161_SkeletonData,全是皇家骑士
+3001,荒野野狼,Wanderer,4,3.0,1,2,Monster_Normal_14_SkeletonData,野外游荡的普通野怪
+

@@ -16,7 +16,7 @@ namespace Game
     public class ItemInfo
     {
         public ItemConfigData itemData;
-        public List<ItemAffix> Affixes = new List<ItemAffix>();
+        public List<StatAffix> Affixes = new List<StatAffix>();
         public AreaType area=AreaType.Bag;
         public ItemInfo() { }
 

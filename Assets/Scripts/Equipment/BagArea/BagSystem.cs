@@ -30,8 +30,8 @@ namespace Game
             }
             var role = this.GetSystem<IRoleFactorySystem>();
             var model = this.GetModel<IHeroModel>();
-            model.AddHero(role.CreateRole(RoleType.Hero,true));
-            model.AddHero(role.CreateRole(RoleType.Hero,true));
+            model.AddHero(role.CreateRole(true));
+            model.AddHero(role.CreateRole(true));
         }
 
         public void AddItem(ItemInfo item)

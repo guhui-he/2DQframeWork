@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using QFramework;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -8,8 +9,12 @@ namespace Game
 {
     public interface IResSystem : ISystem
     {
-        public Sprite GetSprite(string atlasPath, string spriteName);
-        public Sprite GetSprite(ItemType type, string spriteName);
+        Sprite GetSprite(string atlasPath, string spriteName);
+        Sprite GetSprite(ItemType type, string spriteName);
+
+        SkeletonDataAsset GetSkeleton(string path);
+        Texture2D LoadTexture2D(string path);
+        DialogueGraph GetGraph(string path);
     }
     public class ResSystem : AbstractSystem, IResSystem
     {
@@ -61,5 +66,20 @@ namespace Game
             }
         }
 
+        public Texture2D LoadTexture2D(string path)
+        {
+            if (string.IsNullOrEmpty(path)) return null;
+            // QFramework 会自动根据你配置的规则走 AB 包
+            return mResLoader.LoadSync<Texture2D>(path);
+        }
+
+        public SkeletonDataAsset GetSkeleton(string path)
+        {
+            return mResLoader.LoadSync<SkeletonDataAsset>(path);
+        }
+        public DialogueGraph GetGraph(string path)
+        {
+            return mResLoader.LoadSync<DialogueGraph>(path);
+        }
     }
 }

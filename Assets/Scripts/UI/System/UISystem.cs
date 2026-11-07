@@ -1,6 +1,8 @@
 // IUISystem.cs
-using UnityEngine;
+using System;
+using System.Collections.Generic;
 using QFramework;
+using UnityEngine;
 
 
 namespace Game
@@ -10,11 +12,9 @@ namespace Game
 
     public class UISystem : AbstractSystem, IUISystem
     {
+
         protected override void OnInit()
         {
- 
-            this.RegisterEvent<SceneLoadStartEvent>(e => UIKit.OpenPanel<LoadingPanel>());
-
             this.RegisterEvent<SceneLoadCompleteEvent>(e => UIKit.ClosePanel<LoadingPanel>());
             this.RegisterEvent< SceneEnterEvent>(e =>
             {
@@ -27,17 +27,9 @@ namespace Game
             });
 
             this.RegisterEvent<BuildTriggerExitedEvent>(e => UIKit.ClosePanel<BuildEnterPanel>());
-
-            this.RegisterEvent<TownEnterEvent>(e =>
-            {
-                UIKit.OpenPanel<TownPanel>(new TownPanelData {id=e.BuildId});
-            });
-            this.RegisterEvent<TownExitEvent>(e =>
-            {
-                
-                UIKit.ClosePanel<TownPanel>();
-            });
-            this.RegisterEvent<StoreEnterEvent>(e => UIKit.OpenPanel<StorePanel>(new StorePanelData { buildId = e.BuildId }));
+            this.RegisterEvent<ShowEventPanelEvent>(e => UIKit.OpenPanel<GamePlayEventPanel>(new GamePlayEventPanelData { data = e.Data }));
+            this.RegisterEvent<HideEventPanelEvent>(e => UIKit.ClosePanel<GamePlayEventPanel>());
+            this.RegisterEvent<StoreEnterEvent>(e => UIKit.OpenPanel<StorePanel>());
 
             this.RegisterEvent<ShowItemInfoEvent>(e => UIKit.OpenPanel<ItemInfoPanel>(new ItemInfoPanelData { item = e.item }));
             this.RegisterEvent<HideItemInfoEvent>(e => UIKit.ClosePanel<ItemInfoPanel>());
@@ -46,20 +38,35 @@ namespace Game
             {
                 UIKit.OpenPanel<BattleStartPanel>();
             });
-
-            this.RegisterEvent<ShowActionMenuEvent>(e =>
-            {
-                UIKit.OpenPanel<ActionMenuPanel>();
-            });
-            this.RegisterEvent<ShowRoleInfoEvent>(e =>
-            {
-                UIKit.ClosePanel<HeroDesPanel>();
-                UIKit.OpenPanel<HeroDesPanel>(new HeroDesPanelData {data=e.Unit });
-            });
+            this.RegisterEvent<OpenBuffInfoPanelEvent>(e =>UIKit.OpenPanel<BuffInfoPanel>(new BuffInfoPanelData { info = e.info }));
+            this.RegisterEvent<HideBuffInfoPanelEvent>(e => UIKit.ClosePanel<BuffInfoPanel>());
             this.RegisterEvent<GameOverEvent>(e =>
             {
                 UIKit.OpenPanel<GameOverPanel>();
             });
+            this.RegisterEvent<OpenPanelEvent>(OnOpenPanel);
+            this.RegisterEvent<ClosePanelEvent>(OnClosePanel);
+        }
+
+        private void OnOpenPanel(OpenPanelEvent e)
+        {
+            var config = this.GetModel<IUIPanelConfigModel>().GetConfig(e.PanelId);
+            IUIData uiData = new GlobalUIData(e.Params);
+
+            var panel = UIKit.OpenPanel(config.PrefabName, UILevel.Common,uiData: uiData);
+            if (panel != null && e.OnClosed != null)
+            {
+                panel.OnPanelClosed(e.OnClosed);
+            }
+        }
+
+        private void OnClosePanel(ClosePanelEvent e)
+        {
+            var config = this.GetModel<IUIPanelConfigModel>().GetConfig(e.PanelId);
+            if (config != null)
+            {
+                UIKit.ClosePanel(config.PrefabName);
+            }
         }
     }
 }

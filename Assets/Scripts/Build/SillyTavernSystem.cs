@@ -12,17 +12,20 @@ namespace Game
     {
         private ISillyTavernModel sillyTavernModel;
         private IHeroModel heroModel;
+        IPlayerModel playerModel;
         private int townId;
         protected override void OnInit()
         {
             sillyTavernModel=this.GetModel<ISillyTavernModel>();
             heroModel =this.GetModel<IHeroModel>();
-            this.RegisterEvent<TownEnterEvent>(e =>   
+            playerModel =this.GetModel<IPlayerModel>();
+            playerModel.CurrentCityId.RegisterWithInitValue(e =>
             {
-                townId=e.BuildId;
-                RefreshHero(e.BuildId);
-                sillyTavernModel.SetCurHeros(townId);
+                townId = e;
+                RefreshHero(e);
+                sillyTavernModel.SetCurHeros(e);
             });
+
         }
         void RefreshHero(int id)
         {
@@ -31,7 +34,7 @@ namespace Game
             if (currentTime - LastRefreshTime >= 86400f|| LastRefreshTime == 0f)
             {
                 sillyTavernModel.Refresh(id,
-                    this.GetSystem<IRoleFactorySystem>().CreateRoles(RoleType.Hero, 8));
+                    this.GetSystem<IRoleFactorySystem>().CreateRoles(8));
 
                 float daysPassed = Mathf.Floor((currentTime - LastRefreshTime) / 86400f);
                 LastRefreshTime += daysPassed * 86400f;

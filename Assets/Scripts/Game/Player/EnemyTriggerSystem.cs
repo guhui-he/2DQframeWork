@@ -11,15 +11,15 @@ namespace Game
     }
     public class EnemyTriggerSystem : AbstractSystem, IEnemyTriggerSystem
     {
-        IEnemyIconModel model;
+        IPartyModel model;
         protected override void OnInit()
         {
-            model =this.GetModel<IEnemyIconModel>();
+            model =this.GetModel<IPartyModel>();
         }
 
         public  void PlayerEnterEnemy(Collider2D col)
         {
-           var Id=model.GetEnemy(col.GetComponent<EnemyIcon>().id).Id;
+            var Id=model.GetParty(col.GetComponent<PartyIcon>().id).PartyId;  
             this.SendEvent(new SceneEnterEvent(Id));
             this.GetSystem<ILoadingSystem>().LoadSceneAsync("level_1");
         }

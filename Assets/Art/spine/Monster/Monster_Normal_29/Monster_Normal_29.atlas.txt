@@ -1,0 +1,27 @@
+Monster_Normal_29.png
+size:220,172
+pma:true
+body
+bounds:0,58,141,111
+die head
+bounds:129,58,96,69
+rotate:90
+fin_1
+bounds:0,0,48,72
+rotate:180
+fin_2
+bounds:159,8,86,61
+rotate:90
+head
+bounds:65,6,96,69
+rotate:180
+leg_1
+bounds:0,40,10,19
+leg_2
+bounds:14,145,14,21
+leg_3
+bounds:0,129,13,18
+leg_4
+bounds:0,20,10,18
+leg_5
+bounds:0,148,14,21

@@ -1,5 +1,6 @@
 
 using QFramework;
+using UnityEngine;
 
 namespace Game
 {
@@ -21,7 +22,12 @@ namespace Game
 			NameTxt.text = data.itemData.Name;
 			PriceTxt.text=data.itemData.Price.ToString();
 			InfoTxt.text=data.GetAffixDescription();
-		}
+
+			var panelRect = transform as RectTransform;
+            var canvasRect = panelRect.parent as RectTransform;
+            Vector2 localPos = canvasRect.GetLocalPosInRect();
+            panelRect.anchoredPosition = localPos;
+        }
 		
 		protected override void OnShow()
 		{

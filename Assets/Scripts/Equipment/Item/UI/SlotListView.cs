@@ -19,7 +19,7 @@ namespace Game
 
         public void RemoveAt(int index) => mPool.RemoveAt(index);
 
-        public void Remove(ItemInfo item) => mPool.RemoveByItem(item);
+        public void Remove(ItemInfo item) => mPool.Remove(item);
 
         public void Clear() => mPool.Clear();
     }

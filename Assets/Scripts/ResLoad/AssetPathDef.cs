@@ -10,7 +10,7 @@ namespace Game
         public const string AtlasWeapon = "Weapon";
         public const string AtlasShield = "Shield";
         public const string AtlasSupplies = "Supplies";
-
+        public const string AtlasSkill = "Skill";
         public const string AtlasRole = "Role";
     }
 }

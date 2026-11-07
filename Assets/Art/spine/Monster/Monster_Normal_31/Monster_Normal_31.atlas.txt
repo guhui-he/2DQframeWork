@@ -1,0 +1,17 @@
+Monster_Normal_31.png
+size:88,144
+pma:true
+Attack_object
+bounds:0,0,46,59
+rotate:180
+arm
+bounds:70,26,16,13
+arm_2
+bounds:0,135,12,9
+offsets:0,1,12,11
+body
+bounds:0,40,87,104
+die
+bounds:47,14,39,13
+eye
+bounds:48,2,37,12

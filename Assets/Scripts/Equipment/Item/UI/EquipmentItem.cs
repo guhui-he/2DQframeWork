@@ -14,8 +14,6 @@ namespace Game
         private void Start()
         {
             mHeroModel = this.GetModel<IHeroModel>();
-
-            // 只订阅"当前英雄变化"
             mHeroModel.curHeroId
                 .RegisterWithInitValue(OnHeroChanged)
                 .UnRegisterWhenGameObjectDestroyed(gameObject);

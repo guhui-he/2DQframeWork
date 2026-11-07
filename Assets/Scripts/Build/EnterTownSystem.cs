@@ -15,7 +15,8 @@ namespace Game
         }
         public void EnterTown(int buildId)
         {
-            this.SendEvent(new TownEnterEvent(buildId));
+            var model=this.GetModel<IPlayerModel>();
+            model.CurrentCityId.Value= buildId;
         }
     }
 }
